@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 /* eslint-disable */
 
 @Component({
-  selector: 'danylo.shamaiev-backoffice-panel-app-nx-welcome',
+  selector: 'danylo.shamaiev_backoffice-panel-app-nx-welcome',
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *

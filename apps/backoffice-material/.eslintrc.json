@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "danylo-shamaiev-backoffice-panel-app",
+            "prefix": "danylo-shamaiev_backoffice-panel-app",
             "style": "kebab-case"
           }
         ]

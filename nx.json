@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "danylo.shamaiev-backoffice-panel-app",
+  "npmScope": "danylo.shamaiev_backoffice-panel-app",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",

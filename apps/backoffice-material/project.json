@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/backoffice-material/src",
-  "prefix": "danylo.shamaiev-backoffice-panel-app",
+  "prefix": "danylo.shamaiev_backoffice-panel-app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

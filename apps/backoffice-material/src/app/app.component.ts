@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'danylo.shamaiev-backoffice-panel-app-root',
+  selector: 'danylo.shamaiev_backoffice-panel-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
