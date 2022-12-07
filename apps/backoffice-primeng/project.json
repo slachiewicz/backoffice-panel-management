@@ -21,9 +21,9 @@
         ],
         "styles": [
           "node_modules/primeicons/primeicons.css",
-          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
           "node_modules/primeng/resources/primeng.min.css",
-          "apps/backoffice-primeng/src/styles.scss"
+          "apps/backoffice-primeng/src/styles/theme.css",
+          "apps/backoffice-primeng/src/styles/styles.scss"
         ],
         "scripts": []
       },
