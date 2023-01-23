@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/backoffice-primeng",
         "index": "apps/backoffice-primeng/src/index.html",
         "main": "apps/backoffice-primeng/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": "apps/backoffice-primeng/src/polyfills.ts",
         "tsConfig": "apps/backoffice-primeng/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -20,9 +20,10 @@
           "apps/backoffice-primeng/src/assets"
         ],
         "styles": [
+          "node_modules/primeflex/primeflex.css",
           "node_modules/primeicons/primeicons.css",
-          "node_modules/primeng/resources/primeng.min.css",
           "apps/backoffice-primeng/src/styles/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
           "apps/backoffice-primeng/src/styles/styles.scss"
         ],
         "scripts": []

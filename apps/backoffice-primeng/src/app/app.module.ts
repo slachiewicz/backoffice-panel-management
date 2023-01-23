@@ -4,15 +4,19 @@ import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {BrowserModule} from '@angular/platform-browser';
+import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
-import {NxWelcomeComponent} from './nx-welcome.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
@@ -20,6 +24,10 @@ import {appRoutes} from './app.routes';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    InputTextModule,
+    CheckboxModule,
+    ButtonModule,
+    RippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
