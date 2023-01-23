@@ -20,10 +20,10 @@
           "apps/backoffice-primeng/src/assets"
         ],
         "styles": [
-          "node_modules/primeflex/primeflex.css",
           "node_modules/primeicons/primeicons.css",
-          "apps/backoffice-primeng/src/styles/theme.css",
           "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeflex/primeflex.css",
+          "apps/backoffice-primeng/src/styles/theme.css",
           "apps/backoffice-primeng/src/styles/styles.scss"
         ],
         "scripts": []
