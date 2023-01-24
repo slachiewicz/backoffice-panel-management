@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {MessageService} from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
@@ -34,6 +35,7 @@ import {LoginComponent} from './login/login.component';
     RippleModule,
     ReactiveFormsModule,
     ToastModule,
+    CardModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
