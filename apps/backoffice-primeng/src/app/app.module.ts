@@ -9,6 +9,7 @@ import {MessageService} from 'primeng/api';
 import {AvatarModule} from 'primeng/avatar';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
+import {ChartModule} from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
@@ -44,6 +45,7 @@ import {ShellComponent} from './shell/shell.component';
     ToastModule,
     CardModule,
     AvatarModule,
+    ChartModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

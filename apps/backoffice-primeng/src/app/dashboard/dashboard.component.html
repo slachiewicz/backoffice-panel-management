@@ -3,15 +3,23 @@
   <input type="text" pInputText placeholder="Search" />
 </span>
 <h2>Dashboard</h2>
-<div class="grid max-w-full">
+<div class="grid">
   <p-card class="col-12">
     <ng-template pTemplate="header">
       <h4 class="ml-3 pt-3">Today's trends</h4>
     </ng-template>
-    Body Content
+    <div class="card">
+      <p-chart
+        type="line"
+        [data]="basicData"
+        [options]="basicOptions"
+        width="auto"
+        height="350"
+      ></p-chart>
+    </div>
   </p-card>
 </div>
-<div class="grid max-w-full">
+<div class="grid">
   <p-card class="col-6">
     <ng-template pTemplate="header">
       <h4 class="ml-3 pt-3">Unresolved tickets</h4>
