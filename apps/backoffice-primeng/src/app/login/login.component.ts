@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,25 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class LoginComponent {
   public loginForm: FormGroup;
 
-  constructor() {
+  constructor(private readonly authService: AuthService) {
     this.loginForm = new FormGroup({
       login: new FormControl(''),
       password: new FormControl(''),
     });
+  }
+
+  login(): void {
+    this.authService.login(
+      this.loginForm.value.email,
+      this.loginForm.value.password
+    );
+  }
+
+  signInWithGoogle(): void {
+    this.authService.signInWithGoogle();
+  }
+
+  signInWithFacebook(): void {
+    this.authService.signInWithFacebook();
   }
 }

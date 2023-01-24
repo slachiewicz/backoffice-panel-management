@@ -22,7 +22,33 @@
           password?</a>
       </div>
 
-      <button pButton pRipple label="Log In" icon="pi pi-user" class="w-full"></button>
+      <button
+        pButton
+        pRipple
+        label="Log In"
+        icon="pi pi-user"
+        class="w-full"
+        (click)="login()"
+        type="button"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Sign In via Google"
+        icon="pi pi-google"
+        class="w-full mt-2"
+        (click)="signInWithGoogle()"
+        type="button"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Sign In via Facebook"
+        icon="pi pi-facebook"
+        class="w-full mt-2"
+        (click)="signInWithFacebook()"
+        type="button"
+      ></button>
     </div>
   </form>
 </div>
