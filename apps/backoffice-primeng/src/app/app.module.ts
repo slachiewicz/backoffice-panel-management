@@ -6,6 +6,7 @@ import {getStorage, provideStorage} from '@angular/fire/storage';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {MessageService} from 'primeng/api';
+import {AvatarModule} from 'primeng/avatar';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -42,6 +43,7 @@ import {ShellComponent} from './shell/shell.component';
     ReactiveFormsModule,
     ToastModule,
     CardModule,
+    AvatarModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
