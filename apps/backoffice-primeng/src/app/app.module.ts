@@ -19,9 +19,15 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
+import {ShellComponent} from './shell/shell.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ShellComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
