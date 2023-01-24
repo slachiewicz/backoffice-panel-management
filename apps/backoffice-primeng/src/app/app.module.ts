@@ -16,10 +16,11 @@ import {sharedEnvironment} from 'shared';
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
+import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, DashboardComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
