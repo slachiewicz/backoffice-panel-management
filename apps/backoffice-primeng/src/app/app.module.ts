@@ -14,12 +14,14 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
+import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
+import {ClientsComponent} from './clients/clients.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {ShellComponent} from './shell/shell.component';
@@ -30,6 +32,7 @@ import {ShellComponent} from './shell/shell.component';
     LoginComponent,
     ShellComponent,
     DashboardComponent,
+    ClientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import {ShellComponent} from './shell/shell.component';
     AvatarModule,
     ChartModule,
     DividerModule,
+    TableModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

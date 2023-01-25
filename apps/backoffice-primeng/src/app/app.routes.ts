@@ -1,4 +1,5 @@
 import {Route} from '@angular/router';
+import {ClientsComponent} from './clients/clients.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {ShellComponent} from './shell/shell.component';
@@ -16,6 +17,10 @@ export const appRoutes: Route[] = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'clients',
+        component: ClientsComponent,
       },
     ],
   },
