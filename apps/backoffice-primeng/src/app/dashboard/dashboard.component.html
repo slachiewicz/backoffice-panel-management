@@ -8,14 +8,40 @@
     <ng-template pTemplate="header">
       <h4 class="ml-3 pt-3">Today's trends</h4>
     </ng-template>
-    <div class="card">
+    <div class="card flex flex-row align-items-stretch">
       <p-chart
         type="line"
         [data]="basicData"
         [options]="basicOptions"
-        width="auto"
+        width="800"
         height="350"
       ></p-chart>
+      <div class="w-full flex flex-column text-center">
+        <div>
+          <p class="mt-0">Resolved</p>
+          <h3 class="mb-0">449</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Received</p>
+          <h3 class="mb-0">426</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Average first response time</p>
+          <h3 class="mb-0">33m</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Average response time</p>
+          <h3 class="mb-0">3h 8m</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Resolution within SLA</p>
+          <h3 class="mb-0">94%</h3>
+        </div>
+      </div>
     </div>
   </p-card>
 </div>

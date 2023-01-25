@@ -11,6 +11,7 @@ import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {ChartModule} from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
+import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
 import {ToastModule} from 'primeng/toast';
@@ -46,6 +47,7 @@ import {ShellComponent} from './shell/shell.component';
     CardModule,
     AvatarModule,
     ChartModule,
+    DividerModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
