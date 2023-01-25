@@ -1,3 +1,23 @@
+<p-dialog header="Add Ticket" [(visible)]="displayDialog">
+  <form [formGroup]="addTicketForm" class="flex flex-column">
+    <label for="details">Details</label>
+    <input id="details" type="text" pInputText formControlName="details" class="mb-3 mt-2">
+    <label for="customerName">Customer name</label>
+    <input id="customerName" type="text" pInputText formControlName="customerName" class="mb-3 mt-2">
+    <label for="basic">Date</label>
+    <p-calendar appendTo="body" inputId="basic" formControlName="date" class="mb-3 mt-2"></p-calendar>
+    <label for="priority">Priority</label>
+    <input id="priority" type="text" pInputText formControlName="priority" class="mb-3 mt-2">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Add"
+      class="p-button"
+      (click)="addTicket()"
+    ></button>
+  </form>
+</p-dialog>
 <span class="p-input-icon-left mb-4">
   <i class="pi pi-search"></i>
   <input type="text" pInputText placeholder="Search" />
@@ -7,7 +27,14 @@
   <ng-template pTemplate="caption">
     <div class="table-header flex flex-row justify-content-between align-items-center">
       <span>All tickets</span>
-      <button pButton pRipple type="button" label="Add" class="p-button-outlined"></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Add"
+        class="p-button-outlined"
+        (click)="openAddDialog()"
+      ></button>
     </div>
   </ng-template>
   <ng-template pTemplate="header">

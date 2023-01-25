@@ -5,12 +5,15 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MessageService} from 'primeng/api';
 import {AvatarModule} from 'primeng/avatar';
 import {ButtonModule} from 'primeng/button';
+import {CalendarModule} from 'primeng/calendar';
 import {CardModule} from 'primeng/card';
 import {ChartModule} from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
+import {DialogModule} from 'primeng/dialog';
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
@@ -36,6 +39,7 @@ import {ShellComponent} from './shell/shell.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
     provideAuth(() => getAuth()),
@@ -52,6 +56,8 @@ import {ShellComponent} from './shell/shell.component';
     ChartModule,
     DividerModule,
     TableModule,
+    DialogModule,
+    CalendarModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
-import {collection, collectionData, Firestore} from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
+import {
+  addDoc,
+  collection,
+  collectionData,
+  Firestore,
+} from '@angular/fire/firestore';
+import {from, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -18,5 +23,9 @@ export class TicketsService {
         }));
       })
     );
+  }
+
+  public addTicket(ticket: any): Observable<any> {
+    return from(addDoc(collection(this.db, 'tickets'), ticket));
   }
 }
