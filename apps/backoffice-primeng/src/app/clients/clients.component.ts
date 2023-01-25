@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {TicketsService} from '../services/tickets.service';
 
 @Component({
   selector: 'app-clients',
@@ -6,7 +7,9 @@ import {Component} from '@angular/core';
   styles: [''],
 })
 export class ClientsComponent {
-  public tickets: any;
+  public tickets$: any;
 
-  constructor() {}
+  constructor(private readonly ticketsService: TicketsService) {
+    this.tickets$ = this.ticketsService.getTickets();
+  }
 }
