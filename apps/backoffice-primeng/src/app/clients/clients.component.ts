@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {TicketsService} from '../services/tickets.service';
+import {TicketsService} from '../../../../../libs/shared/src/lib/services/tickets.service';
 
 @Component({
   selector: 'app-clients',
