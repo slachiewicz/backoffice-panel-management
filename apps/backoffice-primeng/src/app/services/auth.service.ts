@@ -99,7 +99,7 @@ export class AuthService {
     this.setUserData(result.user);
     authState(this.auth).subscribe((user) => {
       if (user) {
-        this.router.navigate(['accounts']);
+        this.router.navigate(['dashboard']);
       }
     });
   }

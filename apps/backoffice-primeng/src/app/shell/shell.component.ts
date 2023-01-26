@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-shell',
@@ -15,5 +16,9 @@ import {Component} from '@angular/core';
   ],
 })
 export class ShellComponent {
-  constructor() {}
+  constructor(private readonly authService: AuthService) {}
+
+  public logout(): void {
+    this.authService.logout();
+  }
 }
