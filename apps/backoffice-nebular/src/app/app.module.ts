@@ -4,6 +4,7 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
+import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NbAuthModule} from '@nebular/auth';
 import {
@@ -11,15 +12,22 @@ import {
   NbFirebaseGoogleStrategy,
   NbFirebasePasswordStrategy,
 } from '@nebular/firebase-auth';
-import {NbThemeModule} from '@nebular/theme';
+import {
+  NbAlertModule,
+  NbButtonModule,
+  NbCheckboxModule,
+  NbInputModule,
+  NbThemeModule,
+} from '@nebular/theme';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -31,8 +39,12 @@ import {appRoutes} from './app.routes';
         NbFirebaseGoogleStrategy.setup({name: 'google'}),
         NbFirebaseFacebookStrategy.setup({name: 'facebook'}),
       ],
-      forms: {},
     }),
+    NbAlertModule,
+    FormsModule,
+    NbCheckboxModule,
+    NbButtonModule,
+    NbInputModule,
     provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
