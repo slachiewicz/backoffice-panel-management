@@ -6,12 +6,6 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import {NbAuthModule} from '@nebular/auth';
-import {
-  NbFirebaseFacebookStrategy,
-  NbFirebaseGoogleStrategy,
-  NbFirebasePasswordStrategy,
-} from '@nebular/firebase-auth';
 import {
   NbAlertModule,
   NbButtonModule,
@@ -33,13 +27,6 @@ import {LoginComponent} from './login/login.component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     NbThemeModule.forRoot(),
-    NbAuthModule.forRoot({
-      strategies: [
-        NbFirebasePasswordStrategy.setup({name: 'password'}),
-        NbFirebaseGoogleStrategy.setup({name: 'google'}),
-        NbFirebaseFacebookStrategy.setup({name: 'facebook'}),
-      ],
-    }),
     NbAlertModule,
     FormsModule,
     NbCheckboxModule,
