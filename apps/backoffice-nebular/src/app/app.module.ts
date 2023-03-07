@@ -15,12 +15,10 @@ import {
   NbInputModule,
   NbLayoutModule,
   NbMenuModule,
-  NbMenuService,
   NbSidebarModule,
   NbSidebarService,
-  NbThemeModule,
+  NbThemeModule, NbUserModule
 } from '@nebular/theme';
-import {NbMenuInternalService} from '@nebular/theme/components/menu/menu.service';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
@@ -40,14 +38,15 @@ import {ShellComponent} from './shell/shell.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
+    RouterModule.forRoot(appRoutes, { initialNavigation: "enabledBlocking" }),
     ReactiveFormsModule,
     FormsModule,
     NbEvaIconsModule,
-    NbThemeModule.forRoot({name: 'default'}),
+    NbThemeModule.forRoot({ name: "default" }),
     NbLayoutModule,
     NbSidebarModule,
     NbMenuModule.forRoot(),
+    NbUserModule,
     NbAlertModule,
     NbIconModule,
     NbCheckboxModule,
