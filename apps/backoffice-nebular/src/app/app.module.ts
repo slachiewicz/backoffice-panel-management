@@ -4,15 +4,16 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import { NbEvaIconsModule } from "@nebular/eva-icons";
 import {
   NbAlertModule,
   NbButtonModule,
-  NbCheckboxModule,
-  NbInputModule,
-  NbThemeModule,
-} from '@nebular/theme';
+  NbCheckboxModule, NbIconModule,
+  NbInputModule, NbLayoutModule,
+  NbThemeModule
+} from "@nebular/theme";
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
@@ -25,10 +26,14 @@ import {LoginComponent} from './login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
-    NbThemeModule.forRoot(),
-    NbAlertModule,
+    RouterModule.forRoot(appRoutes, { initialNavigation: "enabledBlocking" }),
+    ReactiveFormsModule,
     FormsModule,
+    NbEvaIconsModule,
+    NbThemeModule.forRoot({ name: "default" }),
+    NbAlertModule,
+    NbLayoutModule,
+    NbIconModule,
     NbCheckboxModule,
     NbButtonModule,
     NbInputModule,

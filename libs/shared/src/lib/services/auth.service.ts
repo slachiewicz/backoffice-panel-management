@@ -20,11 +20,9 @@ import {
   setDoc,
 } from '@angular/fire/firestore';
 import {Observable, shareReplay} from 'rxjs';
-import IUser from '../../../../../libs/shared/src/lib/models/user.model';
+import IUser from '../models/user.model';
 import {delay, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import {ActivatedRoute} from '@angular/router';
-import {ToastService} from './toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -39,8 +37,6 @@ export class AuthService {
     private auth: Auth,
     private db: Firestore,
     private router: Router,
-    private route: ActivatedRoute,
-    private toast: ToastService
   ) {
     this.user$ = user(this.auth).pipe(shareReplay(1));
     this.usersCollection = collection(this.db, 'users');
@@ -52,9 +48,9 @@ export class AuthService {
     return signInWithPopup(this.auth, new GoogleAuthProvider())
       .then((result) => {
         this.handleAuthSuccess(result);
-        this.toast.success({
-          detail: 'You have successfully logged in with Google account',
-        });
+        // this.toast.success({
+        //   detail: 'You have successfully logged in with Google account',
+        // });
       })
       .catch((error) => {
         throw new Error(error.message);
@@ -65,9 +61,9 @@ export class AuthService {
     return signInWithPopup(this.auth, new FacebookAuthProvider())
       .then((result) => {
         this.handleAuthSuccess(result);
-        this.toast.success({
-          detail: 'You have successfully logged in with Facebook account',
-        });
+        // this.toast.success({
+        //   detail: 'You have successfully logged in with Facebook account',
+        // });
       })
       .catch((error) => {
         throw new Error(error.message);
@@ -78,9 +74,9 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password)
       .then((result) => {
         this.handleAuthSuccess(result);
-        this.toast.success({
-          detail: 'You have successfully logged in',
-        });
+        // this.toast.success({
+        //   detail: 'You have successfully logged in',
+        // });
       })
       .catch((error) => {
         throw new Error(error.message);

@@ -1,0 +1,54 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="flex justify-content-center mt-8">
+      <form [formGroup]="loginForm">
+        <div class="text-center mb-5">
+          <div class="text-900 text-3xl font-medium mb-3">Login to account</div>
+          <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+          <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
+        </div>
+
+        <div>
+          <label for="login" class="block text-900 font-medium mb-2">Login</label>
+          <input id="login" type="text" placeholder="Login" nbInput class="w-full max-w-full mb-3">
+
+          <label for="password" class="block text-900 font-medium mb-2">Password</label>
+          <input id="password" type="password" placeholder="Password" nbInput class="w-full max-w-full mb-3">
+
+          <div class="flex align-items-center justify-content-between mb-6">
+            <div class="flex align-items-center">
+              <nb-checkbox id="rememberme"></nb-checkbox>
+              <label for="rememberme" class="text-900 ml-2 pb-1">Remember me</label>
+            </div>
+            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot
+              password?</a>
+          </div>
+
+          <button
+            nbButton
+            fullWidth
+            status="basic"
+            (click)="login()"
+            type="button"
+          ><nb-icon icon="log-in-outline"></nb-icon>Log In</button>
+          <button
+            nbButton
+            class="mt-2"
+            fullWidth
+            status="basic"
+            (click)="signInWithGoogle()"
+            type="button"
+          ><nb-icon icon="google-outline"></nb-icon>Sign In via Google</button>
+          <button
+            nbButton
+            class="mt-2"
+            fullWidth
+            status="basic"
+            (click)="signInWithFacebook()"
+            type="button"
+          ><nb-icon icon="facebook-outline"></nb-icon>Sign In via Facebook</button>
+        </div>
+      </form>
+    </div>
+  </nb-layout-column>
+</nb-layout>

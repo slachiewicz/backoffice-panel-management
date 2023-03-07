@@ -22,6 +22,7 @@
           "apps/backoffice-nebular/src/assets"
         ],
         "styles": [
+          "node_modules/primeflex/primeflex.css",
           "node_modules/@nebular/theme/styles/prebuilt/default.css",
           "apps/backoffice-nebular/src/styles.scss"
         ],
