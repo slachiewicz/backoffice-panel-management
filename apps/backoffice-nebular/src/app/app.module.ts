@@ -9,14 +9,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {
   NbAlertModule,
-  NbButtonModule,
-  NbCheckboxModule,
+  NbButtonModule, NbCardModule,
+  NbCheckboxModule, NbFormFieldModule,
   NbIconModule,
   NbInputModule,
-  NbLayoutModule,
+  NbLayoutModule, NbListModule,
   NbMenuModule,
   NbSidebarModule,
-  NbSidebarService,
+  NbSidebarService, NbTagModule,
   NbThemeModule, NbUserModule
 } from '@nebular/theme';
 import {sharedEnvironment} from 'shared';
@@ -56,6 +56,10 @@ import {ShellComponent} from './shell/shell.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    NbFormFieldModule,
+    NbCardModule,
+    NbTagModule,
+    NbListModule
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],
