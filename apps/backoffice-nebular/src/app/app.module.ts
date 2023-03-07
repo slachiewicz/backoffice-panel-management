@@ -6,33 +6,49 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import { NbEvaIconsModule } from "@nebular/eva-icons";
+import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {
   NbAlertModule,
   NbButtonModule,
-  NbCheckboxModule, NbIconModule,
-  NbInputModule, NbLayoutModule,
-  NbThemeModule
-} from "@nebular/theme";
+  NbCheckboxModule,
+  NbIconModule,
+  NbInputModule,
+  NbLayoutModule,
+  NbMenuModule,
+  NbMenuService,
+  NbSidebarModule,
+  NbSidebarService,
+  NbThemeModule,
+} from '@nebular/theme';
+import {NbMenuInternalService} from '@nebular/theme/components/menu/menu.service';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
 import {LoginComponent} from './login/login.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {ShellComponent} from './shell/shell.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    ShellComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: "enabledBlocking" }),
+    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     ReactiveFormsModule,
     FormsModule,
     NbEvaIconsModule,
-    NbThemeModule.forRoot({ name: "default" }),
-    NbAlertModule,
+    NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
+    NbSidebarModule,
+    NbMenuModule.forRoot(),
+    NbAlertModule,
     NbIconModule,
     NbCheckboxModule,
     NbButtonModule,
@@ -42,7 +58,7 @@ import {LoginComponent} from './login/login.component';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [NbSidebarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
