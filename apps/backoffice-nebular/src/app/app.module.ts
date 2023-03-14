@@ -17,13 +17,14 @@ import {
   NbMenuModule,
   NbSidebarModule,
   NbSidebarService, NbTagModule,
-  NbThemeModule, NbUserModule
-} from '@nebular/theme';
+  NbThemeModule, NbTreeGridModule, NbUserModule
+} from "@nebular/theme";
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
+import { ClientsComponent } from "./clients/clients.component";
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShellComponent} from './shell/shell.component';
@@ -34,6 +35,7 @@ import {ShellComponent} from './shell/shell.component';
     LoginComponent,
     DashboardComponent,
     ShellComponent,
+    ClientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import {ShellComponent} from './shell/shell.component';
     NbFormFieldModule,
     NbCardModule,
     NbTagModule,
-    NbListModule
+    NbListModule,
+    NbTreeGridModule
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],
