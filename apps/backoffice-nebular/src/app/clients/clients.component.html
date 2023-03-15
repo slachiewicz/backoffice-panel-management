@@ -1,30 +1,17 @@
-<!--<p-dialog header="Add Ticket" [(visible)]="displayDialog">-->
-<!--  <form [formGroup]="addTicketForm" class="flex flex-column">-->
-<!--    <label for="details">Details</label>-->
-<!--    <input id="details" type="text" pInputText formControlName="details" class="mb-3 mt-2">-->
-<!--    <label for="customerName">Customer name</label>-->
-<!--    <input id="customerName" type="text" pInputText formControlName="customerName" class="mb-3 mt-2">-->
-<!--    <label for="basic">Date</label>-->
-<!--    <p-calendar appendTo="body" inputId="basic" formControlName="date" class="mb-3 mt-2"></p-calendar>-->
-<!--    <label for="priority">Priority</label>-->
-<!--    <input id="priority" type="text" pInputText formControlName="priority" class="mb-3 mt-2">-->
-<!--    <button-->
-<!--      pButton-->
-<!--      pRipple-->
-<!--      type="button"-->
-<!--      label="Add"-->
-<!--      class="p-button"-->
-<!--      (click)="addTicket()"-->
-<!--    ></button>-->
-<!--  </form>-->
-<!--</p-dialog>-->
 <nb-form-field class="w-4 mt-7">
   <nb-icon nbPrefix icon="search" pack="eva"></nb-icon>
   <input type="text" nbInput fullWidth shape="round" placeholder="Search">
 </nb-form-field>
 <h3>Clients</h3>
 <nb-card>
-  <nb-card-header>All tickets</nb-card-header>
+  <nb-card-header>
+    All tickets
+    <button
+      nbButton
+      type="button"
+      (click)="openAddDialog()"
+    >Add</button>
+  </nb-card-header>
   <nb-card-body>
     <table>
       <thead>

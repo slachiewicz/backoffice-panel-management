@@ -37,7 +37,7 @@ export class ShellComponent {
       },
       {
         title: 'Clients',
-        link: '/dashboard',
+        link: '/clients',
         icon: 'person-outline',
       },
       {

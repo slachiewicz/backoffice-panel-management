@@ -9,25 +9,32 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {
   NbAlertModule,
-  NbButtonModule, NbCardModule,
-  NbCheckboxModule, NbFormFieldModule,
+  NbButtonModule, NbCalendarModule,
+  NbCardModule,
+  NbCheckboxModule, NbDialogModule,
+  NbFormFieldModule,
   NbIconModule,
   NbInputModule,
-  NbLayoutModule, NbListModule,
+  NbLayoutModule,
+  NbListModule,
   NbMenuModule,
   NbSidebarModule,
-  NbSidebarService, NbTagModule,
-  NbThemeModule, NbTreeGridModule, NbUserModule
-} from "@nebular/theme";
+  NbSidebarService,
+  NbTagModule,
+  NbThemeModule,
+  NbTreeGridModule,
+  NbUserModule
+} from '@nebular/theme';
 import {sharedEnvironment} from 'shared';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
-import { ClientsComponent } from "./clients/clients.component";
+import {ClientsComponent} from './clients/clients.component';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShellComponent} from './shell/shell.component';
+import {AddTicketDialogComponent} from './add-ticket-dialog/add-ticket-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +43,7 @@ import {ShellComponent} from './shell/shell.component';
     DashboardComponent,
     ShellComponent,
     ClientsComponent,
+    AddTicketDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +70,9 @@ import {ShellComponent} from './shell/shell.component';
     NbCardModule,
     NbTagModule,
     NbListModule,
-    NbTreeGridModule
+    NbTreeGridModule,
+    NbCalendarModule,
+    NbDialogModule.forRoot(),
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {NbDialogService} from '@nebular/theme';
 import {TicketsService} from '../../../../../libs/shared/src/lib/services/tickets.service';
+import {AddTicketDialogComponent} from '../add-ticket-dialog/add-ticket-dialog.component';
 
 @Component({
   selector: 'app-clients',
@@ -27,17 +28,9 @@ import {TicketsService} from '../../../../../libs/shared/src/lib/services/ticket
 })
 export class ClientsComponent {
   public tickets$: any;
-  public displayDialog: boolean = false;
-  public addTicketForm: FormGroup;
 
-  constructor(private readonly ticketsService: TicketsService) {
+  constructor(private readonly ticketsService: TicketsService, private readonly dialogService: NbDialogService) {
     this.tickets$ = this.ticketsService.getTickets();
-    this.addTicketForm = new FormGroup<any>({
-      details: new FormControl(''),
-      customerName: new FormControl(''),
-      date: new FormControl(new Date()),
-      priority: new FormControl(''),
-    });
   }
 
   getShowOn(index: number) {
@@ -46,13 +39,11 @@ export class ClientsComponent {
     return minWithForMultipleColumns + (nextColumnStep * index);
   }
 
-  public addTicket(): void {
-    this.ticketsService.addTicket(this.addTicketForm.value).subscribe(() => {
-      this.displayDialog = false;
-    });
-  }
-
   public openAddDialog(): void {
-    this.displayDialog = true;
+    this.dialogService.open(AddTicketDialogComponent, {
+      context: {
+        // title: 'This is a title passed to the dialog component',
+      },
+    });
   }
 }
