@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <div class="grid">
+<!--      <p-avatar label="J" size="large" shape="circle" class="col-2"></p-avatar>-->
+      <div class="col-10">
+        <div class="text-xl font-medium">John Doe</div>
+        <div class="font-light">Admin</div>
+      </div>
+    </div>
+    <div class="flex flex-column align-items-start">
+      <a class="p-2 m-2 ml-0 no-underline"
+         routerLink="dashboard"
+         routerLinkActive="surface-ground border-round-md"
+      >Dashboard</a>
+      <a class="p-2 m-2 ml-0 no-underline">Team</a>
+      <a class="p-2 m-2 ml-0 no-underline">Offers</a>
+      <a class="p-2 m-2 ml-0 no-underline">Partners</a>
+      <a class="p-2 m-2 ml-0 no-underline">Finances</a>
+      <a class="p-2 m-2 ml-0 no-underline"
+         routerLink="clients"
+         routerLinkActive="surface-ground border-round-md"
+      >Clients</a>
+      <a class="p-2 m-2 ml-0 no-underline" (click)="logout()">Log Out</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>
