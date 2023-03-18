@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/backoffice-material",
         "index": "apps/backoffice-material/src/index.html",
         "main": "apps/backoffice-material/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": "apps/backoffice-material/src/polyfills.ts",
         "tsConfig": "apps/backoffice-material/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
