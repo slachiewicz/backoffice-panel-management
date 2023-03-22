@@ -14,9 +14,10 @@ import {appRoutes} from './app.routes';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ShellComponent} from './shell/shell.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ShellComponent],
+  declarations: [AppComponent, ShellComponent, DashboardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

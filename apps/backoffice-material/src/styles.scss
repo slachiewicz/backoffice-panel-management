@@ -42,3 +42,11 @@ $backoffice-material-theme: mat.define-light-theme(
 /* You can add global styles to this file, and also import other style files */
 
 @import "~normalize.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  min-height: 100vh;
+}
