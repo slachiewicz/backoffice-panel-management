@@ -1,0 +1,31 @@
+:host ::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.dashboard-container {
+  max-width: 80%;
+}
+
+.search-input {
+  width: 20rem;
+}
+
+.trends-card {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.tickets-card {
+  margin-bottom: 1rem;
+  flex: 1 1 50%;
+}
+
+.tasks-card {
+  margin-bottom: 1rem;
+  flex: 1 1 50%;
+}
+
+.bottom-cards {
+  display: flex;
+  gap: 1rem;
+}
