@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'backoffice-ant',
+  displayName: 'backoffice-antd',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/backoffice-ant',
+  coverageDirectory: '../../coverage/apps/backoffice-antd',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

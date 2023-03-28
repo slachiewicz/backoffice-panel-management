@@ -1,27 +1,28 @@
 {
-  "name": "backoffice-ant",
+  "name": "backoffice-antd",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/backoffice-ant/src",
+  "sourceRoot": "apps/backoffice-antd/src",
   "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/backoffice-ant",
-        "index": "apps/backoffice-ant/src/index.html",
-        "main": "apps/backoffice-ant/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/backoffice-ant/tsconfig.app.json",
-        "inlineStyleLanguage": "less",
+        "outputPath": "dist/apps/backoffice-antd",
+        "index": "apps/backoffice-antd/src/index.html",
+        "main": "apps/backoffice-antd/src/main.ts",
+        "polyfills": "apps/backoffice-antd/src/polyfills.ts",
+        "tsConfig": "apps/backoffice-antd/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/backoffice-ant/src/favicon.ico",
-          "apps/backoffice-ant/src/assets"
+          "apps/backoffice-antd/src/favicon.ico",
+          "apps/backoffice-antd/src/assets"
         ],
         "styles": [
-          "node_modules/ng-zorro-antd/ng-zorro-antd.less",
-          "apps/backoffice-ant/src/styles.less"
+          "apps/backoffice-antd/src/styles.scss"
         ],
         "scripts": []
       },
@@ -37,6 +38,12 @@
               "type": "anyComponentStyle",
               "maximumWarning": "2kb",
               "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/backoffice-antd/src/environments/environment.ts",
+              "with": "apps/backoffice-antd/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -56,10 +63,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "backoffice-ant:build:production"
+          "browserTarget": "backoffice-antd:build:production"
         },
         "development": {
-          "browserTarget": "backoffice-ant:build:development"
+          "browserTarget": "backoffice-antd:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,23 +74,25 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "backoffice-ant:build"
+        "browserTarget": "backoffice-antd:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/backoffice-ant/**/*.ts",
-          "apps/backoffice-ant/**/*.html"
+          "apps/backoffice-antd/**/*.ts",
+          "apps/backoffice-antd/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "coverage/apps/backoffice-antd"
+      ],
       "options": {
-        "jestConfig": "apps/backoffice-ant/jest.config.ts",
+        "jestConfig": "apps/backoffice-antd/jest.config.ts",
         "passWithNoTests": true
       }
     }
