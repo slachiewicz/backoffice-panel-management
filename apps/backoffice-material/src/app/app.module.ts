@@ -26,6 +26,7 @@ import {AddTicketDialogComponent} from './clients/add-ticket-dialog/add-ticket-d
 import {ShellComponent} from './shell/shell.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ClientsComponent} from './clients/clients.component';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {ClientsComponent} from './clients/clients.component';
     DashboardComponent,
     ClientsComponent,
     AddTicketDialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
