@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -21,6 +22,7 @@ import {appRoutes} from './app.routes';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AddTicketDialogComponent} from './clients/add-ticket-dialog/add-ticket-dialog.component';
 import {ShellComponent} from './shell/shell.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ClientsComponent} from './clients/clients.component';
@@ -31,6 +33,7 @@ import {ClientsComponent} from './clients/clients.component';
     ShellComponent,
     DashboardComponent,
     ClientsComponent,
+    AddTicketDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import {ClientsComponent} from './clients/clients.component';
     MatInputModule,
     MatCardModule,
     MatDividerModule,
+    MatDialogModule,
     MatButtonModule,
     MatCheckboxModule,
     MatTableModule,

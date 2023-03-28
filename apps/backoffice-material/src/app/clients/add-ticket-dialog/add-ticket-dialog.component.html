@@ -1,0 +1,19 @@
+<form [formGroup]="addTicketForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Details</mat-label>
+    <input type="text" matInput formControlName="details">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Customer name</mat-label>
+    <input type="text" matInput formControlName="customerName">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input type="text" matInput formControlName="date">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Priority</mat-label>
+    <input type="text" matInput formControlName="priority">
+  </mat-form-field>
+  <button mat-button (click)="handleAddClick()">Add</button>
+</form>

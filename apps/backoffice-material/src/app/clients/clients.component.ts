@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
 import {TicketsService} from '../../../../../libs/shared/src/lib/services/tickets.service';
+import {AddTicketDialogComponent} from './add-ticket-dialog/add-ticket-dialog.component';
 
 @Component({
   selector: 'app-clients',
@@ -10,26 +11,23 @@ import {TicketsService} from '../../../../../libs/shared/src/lib/services/ticket
 export class ClientsComponent {
   public tickets$: any;
   public displayedColumns = ['details', 'customerName', 'date', 'priority'];
-  public displayDialog: boolean = false;
-  public addTicketForm: FormGroup;
 
-  constructor(private readonly ticketsService: TicketsService) {
+  constructor(
+    private readonly ticketsService: TicketsService,
+    private dialog: MatDialog
+  ) {
     this.tickets$ = this.ticketsService.getTickets();
-    this.addTicketForm = new FormGroup<any>({
-      details: new FormControl(''),
-      customerName: new FormControl(''),
-      date: new FormControl(new Date()),
-      priority: new FormControl(''),
-    });
   }
 
-  public addTicket(): void {
-    this.ticketsService.addTicket(this.addTicketForm.value).subscribe(() => {
-      this.displayDialog = false;
-    });
+  public addTicket(ticket: any): void {
+    this.ticketsService.addTicket(ticket).subscribe(() => {});
   }
 
   public openAddDialog(): void {
-    this.displayDialog = true;
+    const dialogRef = this.dialog.open(AddTicketDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.addTicket(result);
+    });
   }
 }
