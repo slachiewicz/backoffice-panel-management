@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {sharedEnvironment} from 'shared';
@@ -22,9 +23,15 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ShellComponent} from './shell/shell.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {ClientsComponent} from './clients/clients.component';
 
 @NgModule({
-  declarations: [AppComponent, ShellComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    ShellComponent,
+    DashboardComponent,
+    ClientsComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -44,6 +51,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     MatDividerModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

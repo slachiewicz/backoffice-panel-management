@@ -1,0 +1,30 @@
+<mat-form-field appearance="outline" class="search-input">
+  <mat-label>Search</mat-label>
+  <input matInput placeholder="Start typing...">
+</mat-form-field>
+<h2>Clients</h2>
+<button mat-stroked-button class="add-ticket-btn">Add</button>
+<table mat-table [dataSource]="(tickets$ | async) || []" class="mat-elevation-z1">
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> Details </th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.details}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customerName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.customerName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="priority">
+    <th mat-header-cell *matHeaderCellDef> Priority </th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.priority}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
