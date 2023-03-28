@@ -5,17 +5,17 @@
         class="sidenav-link"
         routerLink="dashboard"
         routerLinkActive="surface-ground border-round-md"
-      >Dashboard</a>
-      <a class="sidenav-link">Team</a>
-      <a class="sidenav-link">Offers</a>
-      <a class="sidenav-link">Partners</a>
-      <a class="sidenav-link">Finances</a>
+      ><mat-icon>home</mat-icon> Dashboard</a>
+      <a class="sidenav-link"><mat-icon>group</mat-icon> Team</a>
+      <a class="sidenav-link"><mat-icon>request_quote</mat-icon> Offers</a>
+      <a class="sidenav-link"><mat-icon>handshake</mat-icon> Partners</a>
+      <a class="sidenav-link"><mat-icon>payments</mat-icon> Finances</a>
       <a
         class="sidenav-link"
         routerLink="clients"
         routerLinkActive="surface-ground border-round-md"
-      >Clients</a>
-      <a class="sidenav-link" (click)="logout()">Log Out</a>
+      ><mat-icon>contacts</mat-icon> Clients</a>
+      <a class="sidenav-link" (click)="logout()"><mat-icon>logout</mat-icon> Log Out</a>
     </div>
   </mat-sidenav>
   <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>

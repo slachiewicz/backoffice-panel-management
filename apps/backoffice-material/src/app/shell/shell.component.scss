@@ -18,11 +18,17 @@
 }
 
 .sidenav-link {
+  display: flex;
+  align-items: center;
   padding: 0.5rem 0;
   color: inherit;
   text-decoration: inherit;
   width: 12rem;
   cursor: pointer;
+
+  mat-icon {
+    margin-right: 0.5rem;
+  }
 }
 
 mat-sidenav-content {
