@@ -7,19 +7,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/backoffice-tailwind",
         "index": "apps/backoffice-tailwind/src/index.html",
         "main": "apps/backoffice-tailwind/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/backoffice-tailwind/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/backoffice-tailwind/src/favicon.ico",
           "apps/backoffice-tailwind/src/assets"
         ],
-        "styles": ["apps/backoffice-tailwind/src/styles.scss"],
+        "styles": [
+          "apps/backoffice-tailwind/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -78,7 +84,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/backoffice-tailwind/jest.config.ts",
         "passWithNoTests": true

@@ -22,6 +22,7 @@
           "apps/backoffice-antd/src/assets"
         ],
         "styles": [
+          "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
           "apps/backoffice-antd/src/styles.scss"
         ],
         "scripts": []
