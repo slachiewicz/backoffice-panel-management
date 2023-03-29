@@ -1,1 +1,76 @@
-<p>dashboard works!</p>
+<ng-template #suffixIconSearch>
+  <span nz-icon nzType="search"></span>
+</ng-template>
+<nz-input-group [nzSuffix]="suffixIconSearch" class="search-input">
+  <input nz-input placeholder="Search" nzSize="large" />
+</nz-input-group>
+<h2>Dashboard</h2>
+<nz-card nzTitle="Today's trends" class="trends-card">
+  <div class="trends-content">
+    <img src="../../assets/graph_placeholder.png" />
+    <div class="trend-values">
+      <h4>Resolved</h4>
+      <h2>449</h2>
+      <nz-divider></nz-divider>
+      <h4>Received</h4>
+      <h2>426</h2>
+      <nz-divider></nz-divider>
+      <h4>Average first response time</h4>
+      <h2>33m</h2>
+      <nz-divider></nz-divider>
+      <h4>Average response time</h4>
+      <h2>3h 8m</h2>
+      <nz-divider></nz-divider>
+      <h4>Resolution within SLA</h4>
+      <h2>94%</h2>
+    </div>
+  </div>
+</nz-card>
+<div class="bottom-cards">
+  <nz-card nzTitle="Unresolved tickets" class="tickets-card">
+    <div class="tickets-content">
+      <div class="ticket">
+        <p>Waiting on Feature Request</p>
+        <p>4238</p>
+      </div>
+      <nz-divider></nz-divider>
+      <div class="ticket">
+        <p>Awaiting Customer Response</p>
+        <p>1005</p>
+      </div>
+      <nz-divider></nz-divider>
+      <div class="ticket">
+        <p>Awaiting Developer Fix</p>
+        <p>914</p>
+      </div>
+      <nz-divider></nz-divider>
+      <div class="ticket">
+        <p>Pending</p>
+        <p>281</p>
+      </div>
+    </div>
+  </nz-card>
+  <nz-card nzTitle="Tasks" class="tasks-card">
+    <div class="task new-task">
+      <p>Create new task</p>
+      <button nz-button nzType="default" nzShape="circle">
+        <span nz-icon nzType="plus"></span>
+      </button>
+    </div>
+    <nz-divider></nz-divider>
+    <div class="task">
+      <label nz-checkbox>Finish ticket update</label>
+      <nz-tag [nzColor]="'red'">URGENT</nz-tag>
+    </div>
+    <nz-divider></nz-divider>
+    <div class="task">
+      <label nz-checkbox>Create new ticket example</label>
+      <nz-tag [nzColor]="'lime'">NEW</nz-tag>
+    </div>
+    <nz-divider></nz-divider>
+    <div class="task">
+      <label nz-checkbox [nzChecked]="true">Update ticket report</label>
+      <nz-tag [nzColor]="'cyan'">DEFAULT</nz-tag>
+    </div>
+  </nz-card>
+</div>
