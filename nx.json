@@ -72,5 +72,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "backoffice-material"
+  "defaultProject": "backoffice-antd"
 }

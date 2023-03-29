@@ -1,0 +1,37 @@
+<nz-layout class="app-layout">
+  <nz-sider [nzTheme]="'light'" class="menu-sidebar" nzWidth="256px">
+    <ul nz-menu nzMode="inline">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Team</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Offers</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Partners</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Finances</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/clients">Clients</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Log Out</a>
+        </li>
+      </ul>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
