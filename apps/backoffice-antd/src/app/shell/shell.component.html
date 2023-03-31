@@ -1,5 +1,12 @@
 <nz-layout class="app-layout">
   <nz-sider [nzTheme]="'light'" class="menu-sidebar" nzWidth="256px">
+    <div class="user-info">
+      <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
+      <div class="user-credentials">
+        <div class="name">John Doe</div>
+        <div class="role">Admin</div>
+      </div>
+    </div>
     <ul nz-menu nzMode="inline">
       <ul>
         <li nz-menu-item nzMatchRouter>

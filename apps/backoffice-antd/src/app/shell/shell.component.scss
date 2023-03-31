@@ -16,6 +16,24 @@
   box-shadow: 2px 0 6px rgba(0,21,41,.35);
 }
 
+.user-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.user-credentials {
+  .name {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .role {
+    font-weight: 300;
+  }
+}
+
 .header-trigger {
   height: 64px;
   padding: 20px 24px;

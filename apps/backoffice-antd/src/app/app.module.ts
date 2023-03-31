@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {NzAvatarModule} from 'ng-zorro-antd/avatar';
 import {NzButtonModule} from 'ng-zorro-antd/button';
 import {NzCardModule} from 'ng-zorro-antd/card';
 import {NzCheckboxModule} from 'ng-zorro-antd/checkbox';
@@ -43,6 +44,7 @@ registerLocaleData(en);
     NzCheckboxModule,
     NzButtonModule,
     NzTagModule,
+    NzAvatarModule,
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent],
