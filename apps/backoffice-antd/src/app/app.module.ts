@@ -23,11 +23,17 @@ import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {NzMenuModule} from 'ng-zorro-antd/menu';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShellComponent} from './shell/shell.component';
+import {ClientsComponent} from './clients/clients.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, ShellComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    ShellComponent,
+    ClientsComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([], {initialNavigation: 'enabledBlocking'}),
