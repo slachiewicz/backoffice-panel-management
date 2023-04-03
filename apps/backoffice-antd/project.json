@@ -16,14 +16,14 @@
         "main": "apps/backoffice-antd/src/main.ts",
         "polyfills": "apps/backoffice-antd/src/polyfills.ts",
         "tsConfig": "apps/backoffice-antd/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/backoffice-antd/src/favicon.ico",
           "apps/backoffice-antd/src/assets"
         ],
         "styles": [
           "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-          "apps/backoffice-antd/src/styles.scss"
+          "apps/backoffice-antd/src/styles.css"
         ],
         "scripts": []
       },
