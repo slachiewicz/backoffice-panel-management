@@ -33,7 +33,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {ShellComponent} from './shell/shell.component';
 import {ClientsComponent} from './clients/clients.component';
-import {sharedEnvironment} from 'shared';
+import {sharedEnvironment, TrendGraphComponent} from 'shared';
 
 registerLocaleData(en);
 
@@ -71,6 +71,7 @@ registerLocaleData(en);
     NzFormModule,
     ReactiveFormsModule,
     NzDatePickerModule,
+    TrendGraphComponent,
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent],
