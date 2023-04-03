@@ -30,6 +30,7 @@ import {IconsProviderModule} from './icons-provider.module';
 import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {NzMenuModule} from 'ng-zorro-antd/menu';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {LoginComponent} from './login/login.component';
 import {ShellComponent} from './shell/shell.component';
 import {ClientsComponent} from './clients/clients.component';
 import {sharedEnvironment} from 'shared';
@@ -42,6 +43,7 @@ registerLocaleData(en);
     DashboardComponent,
     ShellComponent,
     ClientsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
