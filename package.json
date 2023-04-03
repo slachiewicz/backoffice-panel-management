@@ -1,11 +1,16 @@
 {
   "name": "danylo.shamaiev_backoffice-panel-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
+    "start:antd": "nx serve backoffice-antd",
+    "start:primeng": "nx serve backoffice-primeng",
+    "start:material": "nx serve backoffice-material",
+    "start:nebular": "nx serve backoffice-nebular",
+    "start:tailwind": "nx serve backoffice-tailwind",
     "build": "nx build",
     "test": "nx test"
   },
