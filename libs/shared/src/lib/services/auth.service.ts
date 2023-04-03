@@ -19,9 +19,9 @@ import {
   doc,
   setDoc,
 } from '@angular/fire/firestore';
-import {Observable, shareReplay} from 'rxjs';
+import {from, Observable, shareReplay} from 'rxjs';
 import IUser from '../models/user.model';
-import {delay, map} from 'rxjs/operators';
+import {catchError, delay, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
 
 @Injectable({
@@ -36,7 +36,7 @@ export class AuthService {
   constructor(
     private auth: Auth,
     private db: Firestore,
-    private router: Router,
+    private router: Router
   ) {
     this.user$ = user(this.auth).pipe(shareReplay(1));
     this.usersCollection = collection(this.db, 'users');
@@ -45,41 +45,38 @@ export class AuthService {
   }
 
   public signInWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider())
-      .then((result) => {
+    from(signInWithPopup(this.auth, new GoogleAuthProvider()))
+      .pipe(
+        catchError((error) => {
+          throw new Error(error.message);
+        })
+      )
+      .subscribe((result) => {
         this.handleAuthSuccess(result);
-        // this.toast.success({
-        //   detail: 'You have successfully logged in with Google account',
-        // });
-      })
-      .catch((error) => {
-        throw new Error(error.message);
       });
   }
 
   public signInWithFacebook() {
-    return signInWithPopup(this.auth, new FacebookAuthProvider())
-      .then((result) => {
+    from(signInWithPopup(this.auth, new FacebookAuthProvider()))
+      .pipe(
+        catchError((error) => {
+          throw new Error(error.message);
+        })
+      )
+      .subscribe((result) => {
         this.handleAuthSuccess(result);
-        // this.toast.success({
-        //   detail: 'You have successfully logged in with Facebook account',
-        // });
-      })
-      .catch((error) => {
-        throw new Error(error.message);
       });
   }
 
   public login(email: string, password: string) {
-    return signInWithEmailAndPassword(this.auth, email, password)
-      .then((result) => {
+    from(signInWithEmailAndPassword(this.auth, email, password))
+      .pipe(
+        catchError((error) => {
+          throw new Error(error.message);
+        })
+      )
+      .subscribe((result) => {
         this.handleAuthSuccess(result);
-        // this.toast.success({
-        //   detail: 'You have successfully logged in',
-        // });
-      })
-      .catch((error) => {
-        throw new Error(error.message);
       });
   }
 
@@ -91,7 +88,7 @@ export class AuthService {
     await this.router.navigateByUrl('/login');
   }
 
-  private handleAuthSuccess(result: UserCredential): void {
+  private handleAuthSuccess(result: UserCredential) {
     this.setUserData(result.user);
     authState(this.auth).subscribe((user) => {
       if (user) {
@@ -100,7 +97,7 @@ export class AuthService {
     });
   }
 
-  private async setUserData(user: any): Promise<void> {
+  private async setUserData(user: any) {
     const userRef: DocumentReference = doc(this.db, `users/${user.uid}`);
     const userData: IUser = {
       email: user.email,
