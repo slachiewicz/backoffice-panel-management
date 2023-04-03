@@ -7,6 +7,7 @@ import {
 } from '@angular/fire/firestore';
 import {from, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {Ticket} from '../models/ticket.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,18 +15,18 @@ import {map} from 'rxjs/operators';
 export class TicketsService {
   constructor(private db: Firestore) {}
 
-  public getTickets(): Observable<any> {
+  public getTickets(): Observable<Ticket[]> {
     return collectionData(collection(this.db, 'tickets')).pipe(
       map((tickets) => {
         return tickets.map((ticket) => ({
           ...ticket,
           date: ticket['date'].toDate().toDateString(),
-        }));
+        })) as Ticket[];
       })
     );
   }
 
-  public addTicket(ticket: any): Observable<any> {
+  public addTicket(ticket: Ticket): Observable<unknown> {
     return from(addDoc(collection(this.db, 'tickets'), ticket));
   }
 }
