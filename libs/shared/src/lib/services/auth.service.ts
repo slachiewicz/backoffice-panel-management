@@ -21,7 +21,7 @@ import {
 } from '@angular/fire/firestore';
 import {from, Observable, shareReplay} from 'rxjs';
 import IUser from '../models/user.model';
-import {catchError, delay, map} from 'rxjs/operators';
+import {catchError, delay, filter, map, switchMap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 
 @Injectable({
@@ -30,7 +30,6 @@ import {Router} from '@angular/router';
 export class AuthService {
   public user$: Observable<User | null>;
   public isAuthenticated$: Observable<boolean>;
-  public isAuthenticatedWithDelay$: Observable<boolean>;
   private usersCollection: CollectionReference;
 
   constructor(
@@ -41,70 +40,62 @@ export class AuthService {
     this.user$ = user(this.auth).pipe(shareReplay(1));
     this.usersCollection = collection(this.db, 'users');
     this.isAuthenticated$ = this.user$.pipe(map((user) => !!user));
-    this.isAuthenticatedWithDelay$ = this.isAuthenticated$.pipe(delay(1000));
   }
 
-  public signInWithGoogle() {
-    from(signInWithPopup(this.auth, new GoogleAuthProvider()))
+  public signInWithGoogle(): Observable<User> {
+    return from(signInWithPopup(this.auth, new GoogleAuthProvider()))
       .pipe(
         catchError((error) => {
           throw new Error(error.message);
-        })
+        }),
+        switchMap((result) => this.handleAuthSuccess(result))
       )
-      .subscribe((result) => {
-        this.handleAuthSuccess(result);
-      });
   }
 
-  public signInWithFacebook() {
-    from(signInWithPopup(this.auth, new FacebookAuthProvider()))
+  public signInWithFacebook(): Observable<User> {
+    return from(signInWithPopup(this.auth, new FacebookAuthProvider()))
       .pipe(
         catchError((error) => {
           throw new Error(error.message);
-        })
+        }),
+        switchMap((result) => this.handleAuthSuccess(result))
       )
-      .subscribe((result) => {
-        this.handleAuthSuccess(result);
-      });
   }
 
-  public login(email: string, password: string) {
-    from(signInWithEmailAndPassword(this.auth, email, password))
-      .pipe(
-        catchError((error) => {
-          throw new Error(error.message);
-        })
+  public login(email: string, password: string): Observable<User> {
+    return from(signInWithEmailAndPassword(this.auth, email, password)).pipe(
+      catchError((error) => {
+        throw new Error(error.message);
+      }),
+      switchMap((result) => this.handleAuthSuccess(result))
+    );
+  }
+
+  public logout(): Observable<void> {
+    return from(signOut(this.auth));
+  }
+
+  private handleAuthSuccess(result: UserCredential): Observable<User> {
+    return this.setUserData(result.user).pipe(
+      switchMap(() =>
+        authState(this.auth).pipe(
+          filter((user) => !!user),
+          map((user) => user as User)
+        )
       )
-      .subscribe((result) => {
-        this.handleAuthSuccess(result);
-      });
+    );
   }
 
-  public async logout($event?: Event) {
-    if ($event) $event.preventDefault();
-
-    await signOut(this.auth);
-
-    await this.router.navigateByUrl('/login');
-  }
-
-  private handleAuthSuccess(result: UserCredential) {
-    this.setUserData(result.user);
-    authState(this.auth).subscribe((user) => {
-      if (user) {
-        this.router.navigate(['dashboard']);
-      }
-    });
-  }
-
-  private async setUserData(user: any) {
+  private setUserData(user: any): Observable<void> {
     const userRef: DocumentReference = doc(this.db, `users/${user.uid}`);
     const userData: IUser = {
       email: user.email,
       displayName: user.displayName,
     };
-    return await setDoc(userRef, userData, {
-      merge: true,
-    });
+    return from(
+      setDoc(userRef, userData, {
+        merge: true,
+      })
+    );
   }
 }
