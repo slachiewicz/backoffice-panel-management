@@ -17,12 +17,13 @@ export class TicketsService {
 
   public getTickets(): Observable<Ticket[]> {
     return collectionData(collection(this.db, 'tickets')).pipe(
-      map((tickets) => {
-        return tickets.map((ticket) => ({
-          ...ticket,
-          date: ticket['date'].toDate().toDateString(),
-        })) as Ticket[];
-      })
+      map(
+        (tickets) =>
+          tickets.map((ticket) => ({
+            ...ticket,
+            date: ticket['date'].toDate().toDateString(),
+          })) as Ticket[]
+      )
     );
   }
 
