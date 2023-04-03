@@ -1,10 +1,10 @@
-<nz-layout class="app-layout">
-  <nz-sider [nzTheme]="'light'" class="menu-sidebar" nzWidth="256px">
-    <div class="user-info">
+<nz-layout class="h-full">
+  <nz-sider class="relative min-h-full z-10 shadow" [nzTheme]="'light'" nzWidth="256px">
+    <div class="p-5 flex gap-4">
       <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
-      <div class="user-credentials">
-        <div class="name">John Doe</div>
-        <div class="role">Admin</div>
+      <div>
+        <div class="text-lg font-semibold">John Doe</div>
+        <div class="font-light">Admin</div>
       </div>
     </div>
     <ul nz-menu nzMode="inline">
@@ -34,12 +34,12 @@
     </ul>
   </nz-sider>
   <nz-layout>
-    <div class="content-wrapper">
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
+    <div class="overflow-y-auto min-h-screen">
+      <nz-content class="m-6">
+        <div class="h-max p-6 bg-white">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
     </div>
   </nz-layout>
 </nz-layout>
