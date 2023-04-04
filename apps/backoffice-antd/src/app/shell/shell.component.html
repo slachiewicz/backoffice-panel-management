@@ -1,9 +1,9 @@
 <nz-layout class="h-full">
   <nz-sider class="relative min-h-full z-10 shadow" [nzTheme]="'light'" nzWidth="256px">
-    <div class="p-5 flex gap-4">
+    <div class="p-5 flex gap-4 items-center">
       <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
       <div>
-        <div class="text-lg font-semibold">John Doe</div>
+        <div class="text-lg font-semibold">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
         <div class="font-light">Admin</div>
       </div>
     </div>
