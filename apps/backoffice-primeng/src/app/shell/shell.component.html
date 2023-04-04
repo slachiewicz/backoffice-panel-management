@@ -1,29 +1,15 @@
-<div class="grid flex-auto max-w-full w-full">
-  <div class="col-3 shadow-4 pt-8 px-4">
-    <div class="grid">
-      <p-avatar label="J" size="large" shape="circle" class="col-2"></p-avatar>
-      <div class="col-10">
+<div class="flex flex-auto max-w-full w-full h-screen max-h-screen">
+  <div class="w-full max-w-16rem shadow-2 pt-4 z-3">
+    <div class="flex flex-row align-items-center mb-4 px-4">
+      <p-avatar label="J" size="large" shape="circle"></p-avatar>
+      <div class="ml-2">
         <div class="text-xl font-medium">John Doe</div>
         <div class="font-light">Admin</div>
       </div>
     </div>
-    <div class="flex flex-column align-items-start">
-      <a class="p-2 m-2 ml-0 no-underline"
-         routerLink="dashboard"
-         routerLinkActive="surface-ground border-round-md"
-      >Dashboard</a>
-      <a class="p-2 m-2 ml-0 no-underline">Team</a>
-      <a class="p-2 m-2 ml-0 no-underline">Offers</a>
-      <a class="p-2 m-2 ml-0 no-underline">Partners</a>
-      <a class="p-2 m-2 ml-0 no-underline">Finances</a>
-      <a class="p-2 m-2 ml-0 no-underline"
-         routerLink="clients"
-         routerLinkActive="surface-ground border-round-md"
-      >Clients</a>
-      <a class="p-2 m-2 ml-0 no-underline" (click)="logout()">Log Out</a>
-    </div>
+    <p-menu [model]="menu" styleClass="border-none w-full"></p-menu>
   </div>
-  <div class="col-9 pl-4 pt-8 pb-4 max-w-full">
+  <div class="surface-ground px-4 pt-4 pb-4 flex-auto overflow-y-auto">
     <router-outlet></router-outlet>
   </div>
 </div>

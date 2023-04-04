@@ -16,6 +16,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {DialogModule} from 'primeng/dialog';
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
+import {MenuModule} from 'primeng/menu';
 import {RippleModule} from 'primeng/ripple';
 import {TableModule} from 'primeng/table';
 import {TagModule} from 'primeng/tag';
@@ -59,6 +60,7 @@ import {ShellComponent} from './shell/shell.component';
     TableModule,
     DialogModule,
     CalendarModule,
+    MenuModule,
     TagModule,
   ],
   providers: [MessageService],

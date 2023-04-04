@@ -1,4 +1,4 @@
-<span class="p-input-icon-left mb-4">
+<span class="p-input-icon-left">
   <i class="pi pi-search"></i>
   <input type="text" pInputText placeholder="Search" />
 </span>
@@ -6,15 +6,15 @@
 <div class="grid">
   <p-card class="col-12">
     <ng-template pTemplate="header">
-      <h4 class="ml-3 pt-3">Today's trends</h4>
+      <h3 class="ml-3 pt-3 mt-0">Today's trends</h3>
     </ng-template>
     <div class="card flex flex-row align-items-stretch">
       <p-chart
         type="line"
         [data]="basicData"
         [options]="basicOptions"
-        width="800"
-        height="350"
+        width="850"
+        height="420"
       ></p-chart>
       <div class="w-full flex flex-column text-center">
         <div>
@@ -48,24 +48,58 @@
 <div class="grid">
   <p-card class="col-6">
     <ng-template pTemplate="header">
-      <h4 class="ml-3 pt-3">Unresolved tickets</h4>
+      <h3 class="ml-3 pt-3 -mb-2">Unresolved tickets</h3>
     </ng-template>
-      <p>Waiting on feature request</p>
-      <p-divider></p-divider>
-      <p>Awaiting Customer Response</p>
-      <p-divider></p-divider>
-      <p>Awaiting Developer Fix</p>
-      <p-divider></p-divider>
-      <p>Pending</p>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Waiting on feature request</div>
+      <div>4238</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Awaiting Customer Response</div>
+      <div>1005</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Awaiting Developer Fix</div>
+      <div>914</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Pending</div>
+      <div>281</div>
+    </div>
   </p-card>
   <p-card class="col-6">
     <ng-template pTemplate="header">
-      <h4 class="ml-3 pt-3">Tasks</h4>
+      <h3 class="ml-3 pt-3 -mb-2">Tasks</h3>
     </ng-template>
-    <p>Finish ticket update <p-tag severity="warning" value="Urgent"></p-tag></p>
+    <div class="flex justify-content-between">
+      <div class="text-400">Create new task</div>
+    </div>
     <p-divider></p-divider>
-    <p>Create new ticket example <p-tag severity="success" value="New"></p-tag></p>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket1" class="ml-2">Finish ticket update</label>
+      </div>
+      <p-tag severity="warning" value="Urgent"></p-tag>
+    </div>
     <p-divider></p-divider>
-    <p>Update ticket report <p-tag styleClass="mr-2" severity="info" value="Default"></p-tag></p>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket2" class="ml-2">Create new ticket example</label>
+      </div>
+      <p-tag severity="success" value="New"></p-tag>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket3" class="ml-2">Update ticket report</label>
+      </div>
+      <p-tag severity="info" value="Default"></p-tag>
+    </div>
   </p-card>
 </div>
