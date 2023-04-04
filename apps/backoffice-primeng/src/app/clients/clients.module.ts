@@ -6,6 +6,7 @@ import {ButtonModule} from 'primeng/button';
 import {CalendarModule} from 'primeng/calendar';
 import {CardModule} from 'primeng/card';
 import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {ClientsComponent} from './clients.component';
 
@@ -27,6 +28,7 @@ const routes: Routes = [
     DialogModule,
     CalendarModule,
     ButtonModule,
+    InputTextModule,
   ],
 })
 export class ClientsModule {}
