@@ -3,7 +3,7 @@
     <div class="flex flex-row align-items-center mb-4 px-4">
       <p-avatar label="J" size="large" shape="circle"></p-avatar>
       <div class="ml-2">
-        <div class="text-xl font-medium">John Doe</div>
+        <div class="text-xl font-medium">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
         <div class="font-light">Admin</div>
       </div>
     </div>
