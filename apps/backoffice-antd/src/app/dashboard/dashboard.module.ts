@@ -34,6 +34,5 @@ const routes: Routes = [
     TrendGraphComponent,
     RouterModule.forChild(routes),
   ],
-  exports: [RouterModule],
 })
 export class DashboardModule {}

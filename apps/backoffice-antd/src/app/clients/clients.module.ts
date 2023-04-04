@@ -28,6 +28,5 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
-  exports: [RouterModule],
 })
 export class ClientsModule {}
