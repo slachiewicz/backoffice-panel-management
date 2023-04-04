@@ -1,4 +1,6 @@
 import {NgModule} from '@angular/core';
+import {appRoutes} from './app-routes';
+import {RouterModule} from '@angular/router';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
@@ -11,7 +13,6 @@ import {en_US} from 'ng-zorro-antd/i18n';
 import {registerLocaleData} from '@angular/common';
 import en from '@angular/common/locales/en';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AppRoutingModule} from './app-routing.module';
 import {IconsProviderModule} from './icons-provider.module';
 import {sharedEnvironment} from 'shared';
 
@@ -20,7 +21,7 @@ registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
     IconsProviderModule,
