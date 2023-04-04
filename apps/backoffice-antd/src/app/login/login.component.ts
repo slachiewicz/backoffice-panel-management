@@ -16,13 +16,13 @@ export class LoginComponent {
     private readonly router: Router
   ) {
     this.loginForm = new FormGroup({
-      login: new FormControl(''),
+      email: new FormControl(''),
       password: new FormControl(''),
       remember: new FormControl(false),
     });
   }
 
-  public login() {
+  public handleLogIn() {
     this.subscribeAndNavigate(
       this.authService.login(
         this.loginForm.value.email,
@@ -31,11 +31,11 @@ export class LoginComponent {
     );
   }
 
-  public signInWithGoogle() {
+  public handleSignInWithGoogle() {
     this.subscribeAndNavigate(this.authService.signInWithGoogle());
   }
 
-  public signInWithFacebook() {
+  public handleSignInWithFacebook() {
     this.subscribeAndNavigate(this.authService.signInWithFacebook());
   }
 
