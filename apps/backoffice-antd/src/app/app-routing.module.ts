@@ -1,33 +1,16 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {ClientsComponent} from './clients/clients.component';
-import {LoginComponent} from './login/login.component';
-import {ShellComponent} from './shell/shell.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ShellComponent,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'clients',
-        component: ClientsComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./shell/shell-routing.module').then((m) => m.ShellRoutingModule),
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
   },
 ];
 
