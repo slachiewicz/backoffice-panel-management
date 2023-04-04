@@ -7,19 +7,39 @@
     </div>
 
     <div>
-      <label for="login" class="block text-900 font-medium mb-2">Login</label>
-      <input id="login" type="text" placeholder="Login" pInputText class="w-full mb-3">
+      <label for="email" class="block text-900 font-medium mb-2">Email</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        pInputText
+        class="w-full mb-3"
+        formControlName="email"
+      >
 
       <label for="password" class="block text-900 font-medium mb-2">Password</label>
-      <input id="password" type="password" placeholder="Password" pInputText class="w-full mb-3">
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        pInputText
+        class="w-full mb-3"
+        formControlName="password"
+      >
 
       <div class="flex align-items-center justify-content-between mb-6">
         <div class="flex align-items-center">
-          <p-checkbox id="rememberme" [binary]="true" styleClass="mr-2"></p-checkbox>
-          <label for="rememberme" class="text-900">Remember me</label>
+          <p-checkbox
+            id="rememberMe"
+            [binary]="true"
+            styleClass="mr-2"
+            formControlName="remember"
+          ></p-checkbox>
+          <label for="rememberMe" class="text-900">Remember me</label>
         </div>
-        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot
-          password?</a>
+        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">
+          Forgot password?
+        </a>
       </div>
 
       <button
@@ -28,7 +48,7 @@
         label="Log In"
         icon="pi pi-user"
         class="w-full"
-        (click)="login()"
+        (click)="handleLogIn()"
         type="button"
       ></button>
       <button
@@ -37,7 +57,7 @@
         label="Sign In via Google"
         icon="pi pi-google"
         class="w-full mt-2"
-        (click)="signInWithGoogle()"
+        (click)="handleSignInWithGoogle()"
         type="button"
       ></button>
       <button
@@ -46,7 +66,7 @@
         label="Sign In via Facebook"
         icon="pi pi-facebook"
         class="w-full mt-2"
-        (click)="signInWithFacebook()"
+        (click)="handleSignInWithFacebook()"
         type="button"
       ></button>
     </div>

@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
+import {User} from '@angular/fire/auth';
+import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/api';
+import {Observable} from 'rxjs';
 import {AuthService} from 'shared';
 
 @Component({
@@ -8,8 +11,13 @@ import {AuthService} from 'shared';
 })
 export class ShellComponent {
   public menu: MenuItem[];
+  public user$: Observable<User | null>;
 
-  constructor(private readonly authService: AuthService) {
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {
+    this.user$ = this.authService.user$;
     this.menu = [
       {
         label: 'Dashboard',
@@ -40,11 +48,14 @@ export class ShellComponent {
       {
         label: 'Log Out',
         icon: 'pi pi-fw pi-sign-out',
+        command: () => this.handleLogout(),
       },
     ];
   }
 
-  public logout(): void {
-    this.authService.logout();
+  public handleLogout() {
+    this.authService
+      .logout()
+      .subscribe(() => this.router.navigateByUrl('/login'));
   }
 }
