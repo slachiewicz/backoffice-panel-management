@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {appRoutes} from './app-routes';
+import {appRoutes} from './app.routes';
 import {RouterModule} from '@angular/router';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
