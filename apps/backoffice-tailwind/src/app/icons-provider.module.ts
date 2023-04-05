@@ -9,6 +9,7 @@ import {
   heroBanknotes,
   heroUsers,
   heroArrowRightOnRectangle,
+  heroPlusCircle,
 } from '@ng-icons/heroicons/outline';
 
 const icons = {
@@ -20,6 +21,7 @@ const icons = {
   heroBanknotes,
   heroUsers,
   heroArrowRightOnRectangle,
+  heroPlusCircle,
 };
 
 @NgModule({
