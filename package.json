@@ -31,6 +31,8 @@
     "@nebular/eva-icons": "^10.0.0",
     "@nebular/firebase-auth": "^10.0.0",
     "@nebular/theme": "^10.0.0",
+    "@ng-icons/core": "^22.4.0",
+    "@ng-icons/heroicons": "^22.4.0",
     "@nrwl/angular": "14.8.8",
     "chart.js": "^4.2.0",
     "echarts": "^5.4.2",

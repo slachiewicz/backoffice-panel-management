@@ -1,0 +1,54 @@
+<div class="h-full">
+  <div class="relative min-h-full z-10 shadow w-[15rem]">
+    <div class="p-5 flex gap-4 items-center">
+      <ng-icon name="heroUserCircle" size="96px"></ng-icon>
+      <div>
+        <div class="text-lg font-semibold">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
+        <div class="font-light">Admin</div>
+      </div>
+    </div>
+    <ul>
+      <ul>
+        <li>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a>Team</a>
+        </li>
+        <li>
+          <a>Offers</a>
+        </li>
+        <li>
+          <a>Partners</a>
+        </li>
+        <li>
+          <a>Finances</a>
+        </li>
+        <li>
+          <a routerLink="/clients">Clients</a>
+        </li>
+        <li (click)="handleLogout()">
+          <a>Log Out</a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  <div>
+    <div class="overflow-y-auto min-h-screen">
+      <div class="m-6">
+        <div class="h-max p-6 bg-white">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <img
+          src="../../assets/extrawest-logo-with-website.png"
+          alt="Extrawest Logo (extrawest.com)"
+          class="h-12"
+        >
+        <div>Made by Extrawest GmbH © 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+

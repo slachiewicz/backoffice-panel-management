@@ -1,0 +1,74 @@
+<!--<ng-template #suffixIconSearch>-->
+<!--  <span nz-icon nzType="search"></span>-->
+<!--</ng-template>-->
+<!--<nz-input-group [nzSuffix]="suffixIconSearch" class="w-80 mb-3">-->
+<!--  <input nz-input placeholder="Search" nzSize="large" />-->
+<!--</nz-input-group>-->
+<h2>Dashboard</h2>
+<div class="max-w-full mb-3">
+  <div class="flex gap-3">
+    <app-trend-graph></app-trend-graph>
+    <div class="flex-grow flex-shrink basis-0 text-center">
+      <h4>Resolved</h4>
+      <h2>449</h2>
+      <div></div>
+      <h4>Received</h4>
+      <h2>426</h2>
+      <div></div>
+      <h4>Average first response time</h4>
+      <h2>33m</h2>
+      <div></div>
+      <h4>Average response time</h4>
+      <h2>3h 8m</h2>
+      <div></div>
+      <h4>Resolution within SLA</h4>
+      <h2>94%</h2>
+    </div>
+  </div>
+</div>
+<div class="flex gap-3">
+  <div class="mb-3 flex-grow flex-shrink basis-1/2">
+    <div class="flex flex-row justify-between">
+      <div class="font-semibold">Waiting on Feature Request</div>
+      <div>4238</div>
+    </div>
+    <div></div>
+    <div class="flex flex-row justify-between">
+      <div class="font-semibold">Awaiting Customer Response</div>
+      <div>1005</div>
+    </div>
+    <div></div>
+    <div class="flex flex-row justify-between">
+      <div class="font-semibold">Awaiting Developer Fix</div>
+      <div>914</div>
+    </div>
+    <div></div>
+    <div class="flex flex-row justify-between">
+      <div class="font-semibold">Pending</div>
+      <div>281</div>
+    </div>
+  </div>
+  <div class="mb-3 flex-grow flex-shrink basis-1/2">
+    <div class="flex justify-between items-center">
+      <div class="text-gray-400">Create new task</div>
+      <button class="m-0">
+        <!--        <span nz-icon nzType="plus"></span>-->
+      </button>
+    </div>
+    <div></div>
+    <div class="flex justify-between items-center">
+      <label class="font-semibold">Finish ticket update</label>
+      <!--      <nz-tag [nzColor]="'red'">URGENT</nz-tag>-->
+    </div>
+    <div></div>
+    <div class="flex justify-between items-center">
+      <label class="font-semibold">Create new ticket example</label>
+      <!--      <nz-tag [nzColor]="'lime'">NEW</nz-tag>-->
+    </div>
+    <div></div>
+    <div class="flex justify-between items-center">
+      <label class="font-semibold">Update ticket report</label>
+      <!--      <nz-tag [nzColor]="'cyan'">DEFAULT</nz-tag>-->
+    </div>
+  </div>
+</div>

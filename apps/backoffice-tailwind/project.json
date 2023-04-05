@@ -14,17 +14,15 @@
         "outputPath": "dist/apps/backoffice-tailwind",
         "index": "apps/backoffice-tailwind/src/index.html",
         "main": "apps/backoffice-tailwind/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": "apps/backoffice-tailwind/src/polyfills.ts",
         "tsConfig": "apps/backoffice-tailwind/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/backoffice-tailwind/src/favicon.ico",
           "apps/backoffice-tailwind/src/assets"
         ],
         "styles": [
-          "apps/backoffice-tailwind/src/styles.scss"
+          "apps/backoffice-tailwind/src/styles.css"
         ],
         "scripts": []
       },
