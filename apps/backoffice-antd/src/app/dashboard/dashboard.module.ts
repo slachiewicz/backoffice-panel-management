@@ -9,6 +9,7 @@ import {NzDividerModule} from 'ng-zorro-antd/divider';
 import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzTagModule} from 'ng-zorro-antd/tag';
+import {IconsProviderModule} from '../icons-provider.module';
 import {DashboardComponent} from './dashboard.component';
 import {TrendGraphComponent} from 'shared';
 
@@ -23,7 +24,9 @@ const routes: Routes = [
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
+    RouterModule.forChild(routes),
     FormsModule,
+    IconsProviderModule,
     NzFormModule,
     NzButtonModule,
     NzDividerModule,
@@ -32,7 +35,6 @@ const routes: Routes = [
     NzTagModule,
     NzCheckboxModule,
     TrendGraphComponent,
-    RouterModule.forChild(routes),
   ],
 })
 export class DashboardModule {}
