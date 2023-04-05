@@ -1,54 +1,69 @@
-<div class="h-full">
-  <div class="relative min-h-full z-10 shadow w-[15rem]">
-    <div class="p-5 flex gap-4 items-center">
+<div class="h-full flex">
+  <div class="relative min-h-full z-10 shadow-md w-[16rem]">
+    <div class="p-4 flex gap-4 items-center">
       <ng-icon name="heroUserCircle" size="96px"></ng-icon>
       <div>
-        <div class="text-lg font-semibold">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
+        <div class="text-lg font-semibold">
+          {{ (user$ | async)?.displayName || 'Unknown user' }}
+        </div>
         <div class="font-light">Admin</div>
       </div>
     </div>
     <ul>
-      <ul>
-        <li>
-          <a routerLink="/dashboard">Dashboard</a>
-        </li>
-        <li>
-          <a>Team</a>
-        </li>
-        <li>
-          <a>Offers</a>
-        </li>
-        <li>
-          <a>Partners</a>
-        </li>
-        <li>
-          <a>Finances</a>
-        </li>
-        <li>
-          <a routerLink="/clients">Clients</a>
-        </li>
-        <li (click)="handleLogout()">
-          <a>Log Out</a>
-        </li>
-      </ul>
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+        routerLinkActive="bg-yellow-100"
+        routerLink="/dashboard"
+      >
+        <ng-icon name="hero-home" class="mr-2"></ng-icon>
+        <a>Dashboard</a>
+      </li>
+      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+        <ng-icon name="hero-user-group" class="mr-2"></ng-icon>
+        <a>Team</a>
+      </li>
+      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+        <ng-icon name="hero-folder" class="mr-2"></ng-icon>
+        <a>Offers</a>
+      </li>
+      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+        <ng-icon name="hero-star" class="mr-2"></ng-icon>
+        <a>Partners</a>
+      </li>
+      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+        <ng-icon name="hero-banknotes" class="mr-2"></ng-icon>
+        <a>Finances</a>
+      </li>
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+        routerLinkActive="bg-yellow-100"
+        routerLink="/clients"
+      >
+        <ng-icon name="hero-users" class="mr-2"></ng-icon>
+        <a>Clients</a>
+      </li>
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+        (click)="handleLogout()"
+      >
+        <ng-icon name="hero-arrow-right-on-rectangle" class="mr-2"></ng-icon>
+        <a>Log Out</a>
+      </li>
     </ul>
   </div>
-  <div>
+  <div class="bg-gray-100 flex-auto">
     <div class="overflow-y-auto min-h-screen">
-      <div class="m-6">
-        <div class="h-max p-6 bg-white">
-          <router-outlet></router-outlet>
-        </div>
+      <div class="m-6 h-max p-6 bg-white rounded shadow">
+        <router-outlet></router-outlet>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="m-6 flex items-center gap-4">
         <img
           src="../../assets/extrawest-logo-with-website.png"
           alt="Extrawest Logo (extrawest.com)"
           class="h-12"
-        >
+        />
         <div>Made by Extrawest GmbH © 2023</div>
       </div>
     </div>
   </div>
 </div>
-

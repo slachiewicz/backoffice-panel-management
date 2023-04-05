@@ -76,7 +76,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let ticket of (tickets$ | async) || []">
+    <tr *ngFor="let ticket of $any((tickets$ | async) || [])">
       <td>{{ ticket.details }}</td>
       <td>{{ ticket.customerName }}</td>
       <td>{{ ticket.date }}</td>

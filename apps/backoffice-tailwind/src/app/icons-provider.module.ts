@@ -1,9 +1,25 @@
 import {NgModule} from '@angular/core';
 import {NgIconsModule} from '@ng-icons/core';
-import {heroUserCircle} from '@ng-icons/heroicons/outline';
+import {
+  heroHome,
+  heroUserCircle,
+  heroUserGroup,
+  heroFolder,
+  heroStar,
+  heroBanknotes,
+  heroUsers,
+  heroArrowRightOnRectangle,
+} from '@ng-icons/heroicons/outline';
 
 const icons = {
   heroUserCircle,
+  heroHome,
+  heroUserGroup,
+  heroFolder,
+  heroStar,
+  heroBanknotes,
+  heroUsers,
+  heroArrowRightOnRectangle,
 };
 
 @NgModule({
