@@ -10,6 +10,7 @@ import {
   heroUsers,
   heroArrowRightOnRectangle,
   heroPlusCircle,
+  heroMagnifyingGlass,
 } from '@ng-icons/heroicons/outline';
 
 const icons = {
@@ -22,6 +23,7 @@ const icons = {
   heroUsers,
   heroArrowRightOnRectangle,
   heroPlusCircle,
+  heroMagnifyingGlass,
 };
 
 @NgModule({
