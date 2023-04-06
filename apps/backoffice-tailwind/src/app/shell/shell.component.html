@@ -1,4 +1,4 @@
-<div class="h-full flex">
+<div class="h-screen max-h-screen flex">
   <div class="relative min-h-full z-10 shadow-md w-[16rem]">
     <div class="p-4 flex gap-4 items-center">
       <ng-icon name="heroUserCircle" size="96px"></ng-icon>
@@ -18,19 +18,27 @@
         <ng-icon name="hero-home" class="mr-2"></ng-icon>
         <a>Dashboard</a>
       </li>
-      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+      >
         <ng-icon name="hero-user-group" class="mr-2"></ng-icon>
         <a>Team</a>
       </li>
-      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+      >
         <ng-icon name="hero-folder" class="mr-2"></ng-icon>
         <a>Offers</a>
       </li>
-      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+      >
         <ng-icon name="hero-star" class="mr-2"></ng-icon>
         <a>Partners</a>
       </li>
-      <li class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center">
+      <li
+        class="transition-colors hover:bg-yellow-200 py-3 px-6 cursor-pointer flex items-center"
+      >
         <ng-icon name="hero-banknotes" class="mr-2"></ng-icon>
         <a>Finances</a>
       </li>
@@ -51,19 +59,17 @@
       </li>
     </ul>
   </div>
-  <div class="bg-gray-100 flex-auto">
-    <div class="overflow-y-auto min-h-screen">
-      <div class="h-max p-6">
-        <router-outlet></router-outlet>
-      </div>
-      <div class="px-6 pb-6 flex items-center gap-4">
-        <img
-          src="../../assets/extrawest-logo-with-website.png"
-          alt="Extrawest Logo (extrawest.com)"
-          class="h-12"
-        />
-        <div>Made by Extrawest GmbH © 2023</div>
-      </div>
+  <div class="bg-gray-100 flex-auto overflow-y-auto min-h-screen">
+    <div class="h-max p-6">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="px-6 pb-6 flex items-center gap-4">
+      <img
+        src="../../assets/extrawest-logo-with-website.png"
+        alt="Extrawest Logo (extrawest.com)"
+        class="h-12"
+      />
+      <div>Made by Extrawest GmbH © 2023</div>
     </div>
   </div>
 </div>
