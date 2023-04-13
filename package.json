@@ -11,6 +11,7 @@
     "start:material": "nx serve backoffice-material",
     "start:nebular": "nx serve backoffice-nebular",
     "start:tailwind": "nx serve backoffice-tailwind",
+    "start:all": "npm run start:antd --port 4201 & npm run start:primeng --port 4202 & npm run start:material --port 4203 & npm run start:nebular --port 4204 & npm run start:tailwind --port 4205",
     "build": "nx build",
     "test": "nx test"
   },
