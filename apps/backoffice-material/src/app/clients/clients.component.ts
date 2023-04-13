@@ -23,7 +23,7 @@ export class ClientsComponent {
     this.ticketsService.addTicket(ticket).subscribe(() => {});
   }
 
-  public openAddDialog(): void {
+  public handleOpenDialog(): void {
     const dialogRef = this.dialog.open(AddTicketDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {

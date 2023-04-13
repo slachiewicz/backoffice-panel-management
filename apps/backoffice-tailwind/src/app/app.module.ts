@@ -6,6 +6,7 @@ import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {BrowserModule} from '@angular/platform-browser';
+import {DialogModule} from '@angular/cdk/dialog';
 
 import {AppComponent} from './app.component';
 import {NZ_I18N} from 'ng-zorro-antd/i18n';
@@ -25,6 +26,7 @@ registerLocaleData(en);
     BrowserModule,
     BrowserAnimationsModule,
     IconsProviderModule,
+    DialogModule,
     provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

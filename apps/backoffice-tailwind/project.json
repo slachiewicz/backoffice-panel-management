@@ -22,6 +22,7 @@
           "apps/backoffice-tailwind/src/assets"
         ],
         "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
           "apps/backoffice-tailwind/src/styles.css"
         ],
         "scripts": []
