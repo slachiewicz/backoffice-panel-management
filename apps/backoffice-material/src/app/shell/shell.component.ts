@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {User} from '@angular/fire/auth';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
 import {AuthService} from '../../../../../libs/shared/src/lib/services/auth.service';
 
 @Component({
@@ -6,9 +9,18 @@ import {AuthService} from '../../../../../libs/shared/src/lib/services/auth.serv
   templateUrl: './shell.component.html',
 })
 export class ShellComponent {
-  constructor(private readonly authService: AuthService) {}
+  public user$: Observable<User | null>;
 
-  public logout(): void {
-    this.authService.logout();
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {
+    this.user$ = this.authService.user$;
+  }
+
+  public handleLogout() {
+    this.authService
+      .logout()
+      .subscribe(() => this.router.navigateByUrl('/login'));
   }
 }
