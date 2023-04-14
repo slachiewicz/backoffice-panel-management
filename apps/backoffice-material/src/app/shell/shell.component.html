@@ -1,22 +1,39 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="h-screen flex-auto">
   <mat-sidenav mode="side" opened>
-    <div class="sidenav-link-container">
+    <div class="py-6 flex flex-col">
       <a
-        class="sidenav-link"
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
         routerLink="dashboard"
-        routerLinkActive="surface-ground border-round-md"
-      ><mat-icon>home</mat-icon> Dashboard</a>
-      <a class="sidenav-link"><mat-icon>group</mat-icon> Team</a>
-      <a class="sidenav-link"><mat-icon>request_quote</mat-icon> Offers</a>
-      <a class="sidenav-link"><mat-icon>handshake</mat-icon> Partners</a>
-      <a class="sidenav-link"><mat-icon>payments</mat-icon> Finances</a>
+        routerLinkActive="bg-yellow-100"
+      ><mat-icon class="mr-2">home</mat-icon> Dashboard</a>
       <a
-        class="sidenav-link"
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">group</mat-icon> Team</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">request_quote</mat-icon> Offers</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">handshake</mat-icon> Partners</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">payments</mat-icon> Finances</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
         routerLink="clients"
-        routerLinkActive="surface-ground border-round-md"
-      ><mat-icon>contacts</mat-icon> Clients</a>
-      <a class="sidenav-link" (click)="logout()"><mat-icon>logout</mat-icon> Log Out</a>
+        routerLinkActive="bg-yellow-100"
+      ><mat-icon class="mr-2">contacts</mat-icon> Clients</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+        (click)="logout()"
+      ><mat-icon class="mr-2">logout</mat-icon> Log Out</a>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+  <mat-sidenav-content class="p-6">
+    <mat-form-field appearance="outline" class="w-[20rem]">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Start typing...">
+    </mat-form-field>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

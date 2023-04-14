@@ -1,9 +1,5 @@
-<mat-form-field appearance="outline" class="search-input">
-  <mat-label>Search</mat-label>
-  <input matInput placeholder="Start typing...">
-</mat-form-field>
 <h2>Clients</h2>
-<button mat-stroked-button class="add-ticket-btn" (click)="openAddDialog()">Add</button>
+<button mat-stroked-button class="add-ticket-btn" (click)="handleOpenDialog()">Add</button>
 <table mat-table [dataSource]="(tickets$ | async) || []" class="mat-elevation-z1">
   <ng-container matColumnDef="details">
     <th mat-header-cell *matHeaderCellDef> Details </th>

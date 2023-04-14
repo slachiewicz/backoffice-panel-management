@@ -3,6 +3,10 @@
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -40,8 +44,6 @@ $backoffice-material-theme: mat.define-light-theme(
 @include mat.all-component-themes($backoffice-material-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
-@import "~normalize.css";
 
 body {
   display: flex;

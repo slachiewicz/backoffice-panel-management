@@ -4,7 +4,6 @@ import {AuthService} from '../../../../../libs/shared/src/lib/services/auth.serv
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss'],
 })
 export class ShellComponent {
   constructor(private readonly authService: AuthService) {}
