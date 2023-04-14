@@ -35,6 +35,7 @@
     "@ng-icons/core": "^22.4.0",
     "@ng-icons/heroicons": "^22.4.0",
     "@nrwl/angular": "14.8.8",
+    "@tailwindcss/forms": "^0.5.3",
     "chart.js": "^4.2.0",
     "echarts": "^5.4.2",
     "eva-icons": "^1.1.3",
