@@ -1,32 +1,34 @@
-import {Route} from '@angular/router';
+import {
+  AuthGuard,
+  AuthPipeGenerator,
+  redirectLoggedInTo,
+  redirectUnauthorizedTo,
+} from '@angular/fire/auth-guard';
+import {Routes} from '@angular/router';
 
-import {ClientsComponent} from './clients/clients.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {LoginComponent} from './login/login.component';
-import {ShellComponent} from './shell/shell.component';
+const redirectUnauthorizedPipeGenerator: AuthPipeGenerator = () =>
+  redirectUnauthorizedTo(['/login']);
+const redirectLoggedInPipeGenerator: AuthPipeGenerator = () =>
+  redirectLoggedInTo(['/']);
 
-export const appRoutes: Route[] = [
+export const appRoutes: Routes = [
   {
     path: '',
-    component: ShellComponent,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'clients',
-        component: ClientsComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./shell/shell.module').then((m) => m.ShellModule),
+    canActivate: [AuthGuard],
+    data: {
+      authGuardPipe: redirectUnauthorizedPipeGenerator,
+    },
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+    canActivate: [AuthGuard],
+    data: {
+      authGuardPipe: redirectLoggedInPipeGenerator,
+    },
   },
+  {path: '**', redirectTo: ''},
 ];
