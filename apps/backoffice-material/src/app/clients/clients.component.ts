@@ -6,7 +6,6 @@ import {AddTicketDialogComponent} from './add-ticket-dialog/add-ticket-dialog.co
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent {
   public tickets$: any;
