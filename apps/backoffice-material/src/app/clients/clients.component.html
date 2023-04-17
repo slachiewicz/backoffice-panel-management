@@ -1,5 +1,5 @@
 <h2>Clients</h2>
-<mat-card>
+<mat-card class="mb-6">
   <button mat-stroked-button class="!mb-2" (click)="handleOpenDialog()">Add</button>
   <table mat-table [dataSource]="(tickets$ | async) || []" class="w-full">
     <ng-container matColumnDef="details">
