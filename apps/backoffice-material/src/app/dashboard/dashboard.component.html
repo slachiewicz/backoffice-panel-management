@@ -1,79 +1,80 @@
 <h2>Dashboard</h2>
-<div class="dashboard-container">
-  <mat-card class="trends-card">
+<div>
+  <mat-card class="max-w-full mb-6">
     <mat-card-header>
       <mat-card-title>Today's trends</mat-card-title>
       <mat-card-subtitle>as of 25 May 2019, 09:41 PM</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content class="trends-content">
-      <div class="trend-values">
-        <h4>Resolved</h4>
+    <mat-card-content class="!flex">
+      <app-trend-graph></app-trend-graph>
+      <div class="flex-auto text-center">
+        <h4 class="!mb-2">Resolved</h4>
         <h2>449</h2>
         <mat-divider></mat-divider>
-        <h4>Received</h4>
+        <h4 class="!my-2">Received</h4>
         <h2>426</h2>
         <mat-divider></mat-divider>
-        <h4>Average first response time</h4>
+        <h4 class="!my-2">Average first response time</h4>
         <h2>33m</h2>
         <mat-divider></mat-divider>
-        <h4>Average response time</h4>
+        <h4 class="!my-2">Average response time</h4>
         <h2>3h 8m</h2>
         <mat-divider></mat-divider>
-        <h4>Resolution within SLA</h4>
+        <h4 class="!my-2">Resolution within SLA</h4>
         <h2>94%</h2>
       </div>
     </mat-card-content>
   </mat-card>
-  <div class="bottom-cards">
-    <mat-card class="tickets-card">
+  <div class="flex gap-6">
+    <mat-card class="mb-6 flex-[1_1_50%]">
       <mat-card-header>
         <mat-card-title>Unresolved tickets</mat-card-title>
         <mat-card-subtitle>Group: Support</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="tickets-content">
-        <div class="ticket">
+      <mat-card-content>
+        <div class="flex justify-between pt-4">
           <p>Waiting on Feature Request</p>
           <p>4238</p>
         </div>
         <mat-divider></mat-divider>
-        <div class="ticket">
+        <div class="flex justify-between pt-4">
           <p>Awaiting Customer Response</p>
           <p>1005</p>
         </div>
         <mat-divider></mat-divider>
-        <div class="ticket">
+        <div class="flex justify-between pt-4">
           <p>Awaiting Developer Fix</p>
           <p>914</p>
         </div>
         <mat-divider></mat-divider>
-        <div class="ticket">
+        <div class="flex justify-between pt-4">
           <p>Pending</p>
           <p>281</p>
         </div>
       </mat-card-content>
     </mat-card>
-    <mat-card class="tasks-card">
+    <mat-card class="mb-6 flex-[1_1_50%]">
       <mat-card-header>
         <mat-card-title>Tasks</mat-card-title>
         <mat-card-subtitle>Today</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div class="task">
-          <p>Create new task</p>
+        <div class="py-4 flex justify-between align-items-center">
+          <p class="!mb-0">Create new task</p>
           <button mat-icon-button>
             <mat-icon>add</mat-icon>
           </button>
         </div>
         <mat-divider></mat-divider>
-        <div class="task">
+        <div class="py-4 flex justify-between align-items-center">
           <mat-checkbox>Finish ticket update</mat-checkbox>
         </div>
         <mat-divider></mat-divider>
-        <div class="task">
+        <div class="py-4 flex justify-between align-items-center">
           <mat-checkbox>Create new ticket example</mat-checkbox>
         </div>
         <mat-divider></mat-divider>
-        <div class="task">
+        <div class="py-4 flex justify-between align-items-center">
           <mat-checkbox>Update ticket report</mat-checkbox>
         </div>
       </mat-card-content>
