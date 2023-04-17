@@ -5,7 +5,6 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'app-add-ticket-dialog',
   templateUrl: './add-ticket-dialog.component.html',
-  styleUrls: ['./add-ticket-dialog.component.scss'],
 })
 export class AddTicketDialogComponent {
   public addTicketForm: FormGroup;
