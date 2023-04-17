@@ -9,11 +9,11 @@
       <mat-label>Password</mat-label>
       <input matInput formControlName="password" />
     </mat-form-field>
-    <button mat-stroked-button (click)="login()" type="button" class="!mt-2">Log In</button>
-    <button mat-stroked-button (click)="signInWithGoogle()" type="button" class="!mt-2">
+    <button mat-stroked-button (click)="handleLogIn()" type="button" class="!mt-2">Log In</button>
+    <button mat-stroked-button (click)="handleSignInWithGoogle()" type="button" class="!mt-2">
       Sign In via Google
     </button>
-    <button mat-stroked-button (click)="signInWithFacebook()" type="button" class="!mt-2">
+    <button mat-stroked-button (click)="handleSignInWithFacebook()" type="button" class="!mt-2">
       Sign In via Facebook
     </button>
   </form>
