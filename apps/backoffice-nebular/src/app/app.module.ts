@@ -8,10 +8,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {
+  NbDatepickerModule,
   NbDialogModule,
   NbMenuModule,
   NbSidebarService,
-  NbThemeModule,
+  NbThemeModule
 } from '@nebular/theme';
 import {AppComponent} from './app.component';
 import {sharedEnvironment} from 'shared';
@@ -26,7 +27,7 @@ import {appRoutes} from './app.routes';
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     NbThemeModule.forRoot({name: 'default'}),
     NbMenuModule.forRoot(),
-    NbDialogModule.forRoot(),
+    NbDatepickerModule.forRoot(),
     provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

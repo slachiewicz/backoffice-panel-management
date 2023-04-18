@@ -6,7 +6,10 @@ import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {
   NbButtonModule,
   NbCardModule,
-  NbFormFieldModule, NbIconModule,
+  NbDatepickerModule,
+  NbDateService, NbDialogModule,
+  NbFormFieldModule,
+  NbIconModule,
   NbInputModule
 } from '@nebular/theme';
 import {AddTicketDialogComponent} from './add-ticket-dialog/add-ticket-dialog.component';
@@ -23,6 +26,7 @@ const routes: Routes = [
   declarations: [ClientsComponent, AddTicketDialogComponent],
   imports: [
     RouterModule.forChild(routes),
+    NbDialogModule.forChild(),
     CommonModule,
     ReactiveFormsModule,
     NbFormFieldModule,
@@ -31,6 +35,7 @@ const routes: Routes = [
     NbEvaIconsModule,
     NbCardModule,
     NbButtonModule,
+    NbDatepickerModule,
   ],
 })
 export class ClientsModule {}
