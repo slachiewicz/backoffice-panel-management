@@ -5,7 +5,6 @@ import {AuthService} from "../../../../../libs/shared/src/lib/services/auth.serv
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [''],
 })
 export class LoginComponent {
   public loginForm: FormGroup;

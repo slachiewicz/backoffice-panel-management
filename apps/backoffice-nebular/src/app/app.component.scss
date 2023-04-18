@@ -1,0 +1,21 @@
+table {
+  border-collapse: collapse;
+}
+
+table,
+thead,
+tbody,
+tr {
+  width: 100%;
+}
+
+tr {
+  border-bottom-color: rgba(0, 0, 0, 0.58);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+th,
+td {
+  padding: 1rem;
+}

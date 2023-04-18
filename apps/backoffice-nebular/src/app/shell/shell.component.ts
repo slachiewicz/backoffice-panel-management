@@ -4,7 +4,6 @@ import {NbMenuItem} from '@nebular/theme';
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styles: [],
 })
 export class ShellComponent {
   public items: NbMenuItem[];
