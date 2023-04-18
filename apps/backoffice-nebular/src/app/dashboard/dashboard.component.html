@@ -6,7 +6,7 @@
     </nb-card-header>
     <nb-card-body>
       <div class="card flex flex-row align-items-stretch">
-        <img src="../../assets/graph_placeholder.png" alt="Placeholder">
+        <app-trend-graph></app-trend-graph>
         <div class="w-full flex flex-column text-center">
           <div>
             <p>Resolved</p>
@@ -33,8 +33,8 @@
     </nb-card-body>
   </nb-card>
 </div>
-<div class="grid">
-  <nb-card class="col-5">
+<div class="grid gap-4">
+  <nb-card class="col">
     <nb-card-header>
       <h6>Unresolved tickets</h6>
     </nb-card-header>
@@ -52,19 +52,30 @@
           Pending <div class="ml-auto">281</div>
         </nb-list-item>
       </nb-list>
-<!--      <p>Waiting on feature request</p>-->
-<!--      <p>Awaiting Customer Response</p>-->
-<!--      <p>Awaiting Developer Fix</p>-->
-<!--      <p>Pending</p>-->
   </nb-card>
-  <nb-card class="col-6 ml-auto">
+  <nb-card class="col">
     <nb-card-header>
       <h6>Tasks</h6>
     </nb-card-header>
     <nb-list>
-      <nb-list-item>Finish ticket update <nb-tag class="ml-auto" status="warning" text="Urgent"></nb-tag></nb-list-item>
-      <nb-list-item>Create new ticket example <nb-tag class="ml-auto" status="success" text="New"></nb-tag></nb-list-item>
-      <nb-list-item>Update ticket report <nb-tag class="ml-auto" status="info" text="Default"></nb-tag></nb-list-item>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item1"></nb-checkbox>
+          <label class="ml-2" for="item1">Finish ticket update</label>
+        </div>
+        <nb-tag class="ml-auto" status="warning" text="Urgent"></nb-tag></nb-list-item>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item2"></nb-checkbox>
+          <label class="ml-2" for="item2">Create new ticket example</label>
+        </div>
+        <nb-tag class="ml-auto" status="success" text="New"></nb-tag></nb-list-item>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item3"></nb-checkbox>
+          <label class="ml-2" for="item3">Update ticket report</label>
+        </div>
+        <nb-tag class="ml-auto" status="info" text="Default"></nb-tag></nb-list-item>
     </nb-list>
   </nb-card>
 </div>

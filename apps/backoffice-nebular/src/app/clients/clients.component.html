@@ -1,30 +1,28 @@
 <h3>Clients</h3>
 <nb-card>
-  <nb-card-header>
-    All tickets
+  <nb-card-body>
     <button
+      class="mb-2"
       nbButton
       type="button"
       (click)="openAddDialog()"
     >Add</button>
-  </nb-card-header>
-  <nb-card-body>
     <table>
       <thead>
-        <tr>
-          <th>Ticket details</th>
-          <th>Customer name</th>
-          <th>Date</th>
-          <th>Priority</th>
-        </tr>
+      <tr>
+        <th>Ticket details</th>
+        <th>Customer name</th>
+        <th>Date</th>
+        <th>Priority</th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ticket of tickets$ | async">
-          <td>{{ticket.details}}</td>
-          <td>{{ticket.customerName}}</td>
-          <td>{{ticket.date}}</td>
-          <td>{{ticket.priority}}</td>
-        </tr>
+      <tr *ngFor="let ticket of tickets$ | async">
+        <td>{{ticket.details}}</td>
+        <td>{{ticket.customerName}}</td>
+        <td>{{ticket.date}}</td>
+        <td>{{ticket.priority}}</td>
+      </tr>
       </tbody>
     </table>
   </nb-card-body>

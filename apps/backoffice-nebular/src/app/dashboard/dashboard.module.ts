@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Router, RouterModule, Routes} from '@angular/router';
-import {NbCardModule, NbListModule, NbTagModule} from '@nebular/theme';
+import {NbCardModule, NbCheckboxModule, NbListModule, NbTagModule} from '@nebular/theme';
 import {DashboardComponent} from './dashboard.component';
 import {TrendGraphComponent} from 'shared';
 
@@ -17,6 +17,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TrendGraphComponent,
     NbCardModule,
+    NbCheckboxModule,
     NbListModule,
     NbTagModule,
   ],

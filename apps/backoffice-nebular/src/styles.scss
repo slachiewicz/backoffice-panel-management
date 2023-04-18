@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+table {
+  border-collapse: collapse;
+}
+
+table,
+thead,
+tbody,
+tr {
+  width: 100%;
+}
+
+tr {
+  border-bottom-color: rgba(0, 0, 0, 0.58);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+th,
+td {
+  padding: 1rem;
+}
+
+.main-container {
+  top: 0 !important;
+}
