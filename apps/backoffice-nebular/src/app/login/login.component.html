@@ -17,8 +17,8 @@
 
           <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
-              <nb-checkbox id="rememberme"></nb-checkbox>
-              <label for="rememberme" class="text-900 ml-2 pb-1">Remember me</label>
+              <nb-checkbox id="remember"></nb-checkbox>
+              <label for="remember" class="text-900 ml-2 pb-1">Remember me</label>
             </div>
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot
               password?</a>
@@ -28,7 +28,7 @@
             nbButton
             fullWidth
             status="basic"
-            (click)="login()"
+            (click)="handleLogIn()"
             type="button"
           ><nb-icon icon="log-in-outline"></nb-icon>Log In</button>
           <button
@@ -36,7 +36,7 @@
             class="mt-2"
             fullWidth
             status="basic"
-            (click)="signInWithGoogle()"
+            (click)="handleSignInWithGoogle()"
             type="button"
           ><nb-icon icon="google-outline"></nb-icon>Sign In via Google</button>
           <button
@@ -44,7 +44,7 @@
             class="mt-2"
             fullWidth
             status="basic"
-            (click)="signInWithFacebook()"
+            (click)="handleSignInWithFacebook()"
             type="button"
           ><nb-icon icon="facebook-outline"></nb-icon>Sign In via Facebook</button>
         </div>

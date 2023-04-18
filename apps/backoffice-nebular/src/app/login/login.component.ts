@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {AuthService} from "../../../../../libs/shared/src/lib/services/auth.service";
+import {Router} from '@angular/router';
+import {Observable, take} from 'rxjs';
+import {AuthService} from 'shared';
 
 @Component({
   selector: 'app-login',
@@ -9,26 +11,37 @@ import {AuthService} from "../../../../../libs/shared/src/lib/services/auth.serv
 export class LoginComponent {
   public loginForm: FormGroup;
 
-  constructor(private readonly authService: AuthService) {
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {
     this.loginForm = new FormGroup({
-      login: new FormControl(''),
+      email: new FormControl(''),
       password: new FormControl(''),
+      remember: new FormControl(false),
     });
   }
 
-  login(): void {
-    this.authService.login(
-      this.loginForm.value.email,
-      this.loginForm.value.password
+  public handleLogIn() {
+    this.subscribeAndNavigate(
+      this.authService.login(
+        this.loginForm.value.email,
+        this.loginForm.value.password
+      )
     );
   }
 
-  signInWithGoogle(): void {
-    this.authService.signInWithGoogle();
+  public handleSignInWithGoogle() {
+    this.subscribeAndNavigate(this.authService.signInWithGoogle());
   }
 
-  signInWithFacebook(): void {
-    this.authService.signInWithFacebook();
+  public handleSignInWithFacebook() {
+    this.subscribeAndNavigate(this.authService.signInWithFacebook());
+  }
+
+  private subscribeAndNavigate(observable: Observable<unknown>) {
+    observable
+      .pipe(take(1))
+      .subscribe(() => this.router.navigateByUrl('/dashboard'));
   }
 }
-

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {NbMenuItem} from '@nebular/theme';
+import {Router} from '@angular/router';
+import {NbMenuItem, NbMenuService} from '@nebular/theme';
+import {AuthService} from 'shared';
 
 @Component({
   selector: 'app-shell',
@@ -7,7 +9,11 @@ import {NbMenuItem} from '@nebular/theme';
 })
 export class ShellComponent {
   public items: NbMenuItem[];
-  constructor() {
+  constructor(
+    private readonly menuService: NbMenuService,
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {
     this.items = [
       {
         title: 'Dashboard',
@@ -32,7 +38,7 @@ export class ShellComponent {
       {
         title: 'Finances',
         link: '/dashboard',
-        icon: 'credit-card-outline'
+        icon: 'credit-card-outline',
       },
       {
         title: 'Clients',
@@ -40,10 +46,17 @@ export class ShellComponent {
         icon: 'person-outline',
       },
       {
-        title: 'Log out',
-        link: '/dashboard',
+        title: 'Log Out',
         icon: 'log-out-outline',
       },
-    ]
+    ];
+
+    this.menuService.onItemClick().subscribe((menuBag) => {
+      console.log(menuBag);
+      if (menuBag.item.title === 'Log Out')
+        this.authService
+          .logout()
+          .subscribe(() => this.router.navigateByUrl('/login'));
+    });
   }
 }
