@@ -6,7 +6,7 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
-import {sharedEnvironment} from 'shared';
+import {environment} from '../environments/environment';
 import {appRoutes} from './app.routes';
 
 import {AppComponent} from './app.component';
@@ -19,7 +19,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     HttpClientModule,
-    provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

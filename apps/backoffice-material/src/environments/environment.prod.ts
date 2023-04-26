@@ -1,4 +1,7 @@
-export const sharedEnvironment = {
+// Note: This environment config uses hardcoded values because of custom Webpack configuration conflicts
+
+export const environment = {
+  production: true,
   firebase: {
     apiKey: 'AIzaSyAy1d1065f4qrmL37ZtM9hvTFrhNYXOFoU',
     authDomain: 'backoffice-40bfd.firebaseapp.com',

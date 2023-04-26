@@ -12,11 +12,11 @@ import {
   NbDialogModule,
   NbMenuModule,
   NbSidebarService,
-  NbThemeModule
+  NbThemeModule,
 } from '@nebular/theme';
 import {AppComponent} from './app.component';
-import {sharedEnvironment} from 'shared';
 import {appRoutes} from './app.routes';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +28,7 @@ import {appRoutes} from './app.routes';
     NbThemeModule.forRoot({name: 'default'}),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
-    provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

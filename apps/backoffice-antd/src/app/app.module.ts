@@ -14,7 +14,7 @@ import {registerLocaleData} from '@angular/common';
 import en from '@angular/common/locales/en';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {IconsProviderModule} from './icons-provider.module';
-import {sharedEnvironment} from 'shared';
+import {environment} from '../environments/environment';
 
 registerLocaleData(en);
 
@@ -25,7 +25,7 @@ registerLocaleData(en);
     BrowserModule,
     BrowserAnimationsModule,
     IconsProviderModule,
-    provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

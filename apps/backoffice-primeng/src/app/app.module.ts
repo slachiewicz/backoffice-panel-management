@@ -8,7 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MessageService} from 'primeng/api';
 import {RippleModule} from 'primeng/ripple';
 import {ToastModule} from 'primeng/toast';
-import {sharedEnvironment} from 'shared';
+import {environment} from '../environments/environment';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
@@ -20,7 +20,7 @@ import {appRoutes} from './app.routes';
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     BrowserModule,
     BrowserAnimationsModule,
-    provideFirebaseApp(() => initializeApp(sharedEnvironment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

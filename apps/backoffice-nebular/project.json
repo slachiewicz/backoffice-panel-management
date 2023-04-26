@@ -6,11 +6,12 @@
   "prefix": "app",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/backoffice-nebular/webpack.config.js"
+        },
         "outputPath": "dist/apps/backoffice-nebular",
         "index": "apps/backoffice-nebular/src/index.html",
         "main": "apps/backoffice-nebular/src/main.ts",
@@ -33,8 +34,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "1000kb",
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -62,7 +63,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
           "browserTarget": "backoffice-nebular:build:production"
