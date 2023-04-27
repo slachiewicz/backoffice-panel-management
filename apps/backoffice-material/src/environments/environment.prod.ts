@@ -4,7 +4,7 @@ export const environment = {
   production: true,
   firebase: {
     apiKey: 'AIzaSyAy1d1065f4qrmL37ZtM9hvTFrhNYXOFoU',
-    authDomain: 'backoffice-40bfd.firebaseapp.com',
+    authDomain: 'backoffice-material.firebaseapp.com',
     projectId: 'backoffice-40bfd',
     storageBucket: 'backoffice-40bfd.appspot.com',
     messagingSenderId: '240747305469',
