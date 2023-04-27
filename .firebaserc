@@ -1,5 +1,26 @@
 {
   "projects": {
     "default": "backoffice-40bfd"
-  }
+  },
+  "targets": {
+    "backoffice-40bfd": {
+      "hosting": {
+        "backoffice-antd": [
+          "backoffice-antd"
+        ],
+        "backoffice-mui": [
+          "backoffice-material"
+        ],
+        "backoffice-nebular": [
+          "backoffice-nebular"
+        ],
+        "backoffice-prime-ng": [
+          "backoffice-primeng"
+        ],
+        "backoffice-tailwind": [
+          "backoffice-tailwind"
+        ]
+        }
+      }
+    },
 }
