@@ -5,8 +5,8 @@ cache:
     - node_modules/
     - dist/
 
-deploy_all:
-  stage: deploy_all
+deploy:
+  stage: deploy
   environment: all
   only:
     - main
