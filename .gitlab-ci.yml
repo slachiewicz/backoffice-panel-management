@@ -18,7 +18,7 @@ build:
   script:
     - npm run build:all
   artifacts:
-    expire_in: '300'
+    expire_in: '600'
     paths:
       - dist
 
