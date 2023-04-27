@@ -1,0 +1,81 @@
+<h3>Dashboard</h3>
+<div class="grid">
+  <nb-card class="col-12">
+    <nb-card-header>
+      <h6>Today's trends</h6>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="card flex flex-row align-items-stretch">
+        <app-trend-graph></app-trend-graph>
+        <div class="w-full flex flex-column text-center">
+          <div>
+            <p>Resolved</p>
+            <h5 class="mt-0">449</h5>
+          </div>
+          <div>
+            <p>Received</p>
+            <h5 class="mt-0">426</h5>
+          </div>
+          <div>
+            <p>Average first response time</p>
+            <h5 class="mt-0">33m</h5>
+          </div>
+          <div>
+            <p>Average response time</p>
+            <h5 class="mt-0">3h 8m</h5>
+          </div>
+          <div>
+            <p>Resolution within SLA</p>
+            <h5 class="mt-0">94%</h5>
+          </div>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+<div class="grid gap-4">
+  <nb-card class="col">
+    <nb-card-header>
+      <h6>Unresolved tickets</h6>
+    </nb-card-header>
+      <nb-list>
+        <nb-list-item>
+          Waiting on feature request <div class="ml-auto">4238</div>
+        </nb-list-item>
+        <nb-list-item>
+          Awaiting Customer Response <div class="ml-auto">1005</div>
+        </nb-list-item>
+        <nb-list-item>
+          Awaiting Developer Fix <div class="ml-auto">914</div>
+        </nb-list-item>
+        <nb-list-item>
+          Pending <div class="ml-auto">281</div>
+        </nb-list-item>
+      </nb-list>
+  </nb-card>
+  <nb-card class="col">
+    <nb-card-header>
+      <h6>Tasks</h6>
+    </nb-card-header>
+    <nb-list>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item1"></nb-checkbox>
+          <label class="ml-2" for="item1">Finish ticket update</label>
+        </div>
+        <nb-tag class="ml-auto" status="warning" text="Urgent"></nb-tag></nb-list-item>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item2"></nb-checkbox>
+          <label class="ml-2" for="item2">Create new ticket example</label>
+        </div>
+        <nb-tag class="ml-auto" status="success" text="New"></nb-tag></nb-list-item>
+      <nb-list-item>
+        <div class="flex justify-content-center">
+          <nb-checkbox id="item3"></nb-checkbox>
+          <label class="ml-2" for="item3">Update ticket report</label>
+        </div>
+        <nb-tag class="ml-auto" status="info" text="Default"></nb-tag></nb-list-item>
+    </nb-list>
+  </nb-card>
+</div>

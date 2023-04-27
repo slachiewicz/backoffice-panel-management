@@ -1,0 +1,54 @@
+<form [formGroup]="addTicketForm">
+  <div class="mb-2">
+    <label
+      for="details"
+      class="block text-sm font-medium leading-6 text-gray-900"
+      >Details</label
+    >
+    <input
+      id="details"
+      type="text"
+      formControlName="details"
+      class="block w-full rounded-md border-0 placeholder:text-gray-400 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 py-1.5 focus:ring-2 focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6"
+    />
+  </div>
+  <div class="mb-2">
+    <label
+      for="customerName"
+      class="block text-sm font-medium leading-6 text-gray-900"
+    >Customer name</label>
+    <input
+      id="customerName"
+      type="text"
+      formControlName="customerName"
+      class="block w-full rounded-md border-0 placeholder:text-gray-400 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 py-1.5 focus:ring-2 focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6"
+    />
+  </div>
+  <div class="mb-2">
+    <label for="date" class="block text-sm font-medium leading-6 text-gray-900">Date</label>
+    <input
+      id="date"
+      type="text"
+      formControlName="date"
+      class="block w-full rounded-md border-0 placeholder:text-gray-400 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 py-1.5 focus:ring-2 focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6"
+    />
+  </div>
+  <div>
+    <label
+      for="priority"
+      class="block text-sm font-medium leading-6 text-gray-900"
+    >Priority</label>
+    <input
+      id="priority"
+      type="text"
+      formControlName="priority"
+      class="block w-full rounded-md border-0 placeholder:text-gray-400 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 py-1.5 focus:ring-2 focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6"
+    />
+  </div>
+  <button
+    (click)="handleAddClick()"
+    class="mt-4 inline-flex w-full justify-center rounded-md bg-yellow-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+  >
+    Add
+  </button>
+</form>

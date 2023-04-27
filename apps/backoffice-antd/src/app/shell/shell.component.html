@@ -1,0 +1,54 @@
+<nz-layout class="h-full">
+  <nz-sider class="relative min-h-full z-10 shadow" [nzTheme]="'light'" nzWidth="256px">
+    <div class="p-5 flex gap-4 items-center">
+      <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
+      <div>
+        <div class="text-lg font-semibold">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
+        <div class="font-light">Admin</div>
+      </div>
+    </div>
+    <ul nz-menu nzMode="inline">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Team</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Offers</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Partners</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Finances</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/clients">Clients</a>
+        </li>
+        <li nz-menu-item nzMatchRouter (click)="handleLogout()">
+          <a>Log Out</a>
+        </li>
+      </ul>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <div class="overflow-y-auto min-h-screen">
+      <nz-content class="m-6">
+        <div class="h-max p-6 bg-white">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer class="flex items-center gap-4">
+        <img
+          src="../../assets/extrawest-logo-with-website.png"
+          alt="Extrawest Logo (extrawest.com)"
+          class="h-12"
+        >
+        <div>Made by Extrawest GmbH © 2023</div>
+      </nz-footer>
+    </div>
+  </nz-layout>
+</nz-layout>
+

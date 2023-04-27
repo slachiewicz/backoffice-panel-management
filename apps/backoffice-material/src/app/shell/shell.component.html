@@ -1,0 +1,58 @@
+<mat-sidenav-container class="h-screen flex-auto">
+  <mat-sidenav mode="side" opened>
+    <div class="py-6 flex flex-col">
+      <div class="px-6 mb-4 flex gap-4 items-center">
+        <div class="p-2 pt-3">
+          <mat-icon class="scale-[200%]">account_circle</mat-icon>
+        </div>
+        <div>
+          <div class="text-lg font-semibold">
+            {{ (user$ | async)?.displayName || 'Unknown user' }}
+          </div>
+          <div class="font-light">Admin</div>
+        </div>
+      </div>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+        routerLink="dashboard"
+        routerLinkActive="bg-yellow-100"
+      ><mat-icon class="mr-2">home</mat-icon> Dashboard</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">group</mat-icon> Team</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">request_quote</mat-icon> Offers</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">handshake</mat-icon> Partners</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+      ><mat-icon class="mr-2">payments</mat-icon> Finances</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+        routerLink="clients"
+        routerLinkActive="bg-yellow-100"
+      ><mat-icon class="mr-2">contacts</mat-icon> Clients</a>
+      <a
+        class="flex items-center py-3 px-6 text-inherit no-underline w-[16rem] cursor-pointer transition-colors hover:bg-yellow-200"
+        (click)="handleLogout()"
+      ><mat-icon class="mr-2">logout</mat-icon> Log Out</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="p-6">
+    <mat-form-field appearance="outline" class="w-[20rem]">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Start typing...">
+    </mat-form-field>
+    <router-outlet></router-outlet>
+    <div class="py-6 flex items-center gap-4">
+      <img
+        src="../../assets/extrawest-logo-with-website.png"
+        alt="Extrawest Logo (extrawest.com)"
+        class="h-12"
+      />
+      <div>Made by Extrawest GmbH © 2023</div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

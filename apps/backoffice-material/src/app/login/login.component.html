@@ -1,0 +1,20 @@
+<div class="h-screen flex align-center justify-center">
+  <form [formGroup]="loginForm" class="w-[20rem] flex flex-col justify-center">
+    <h2 class="text-center">Sign In</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="login" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" />
+    </mat-form-field>
+    <button mat-stroked-button (click)="handleLogIn()" type="button" class="!mt-2">Log In</button>
+    <button mat-stroked-button (click)="handleSignInWithGoogle()" type="button" class="!mt-2">
+      Sign In via Google
+    </button>
+    <button mat-stroked-button (click)="handleSignInWithFacebook()" type="button" class="!mt-2">
+      Sign In via Facebook
+    </button>
+  </form>
+</div>

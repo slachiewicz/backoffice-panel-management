@@ -1,0 +1,88 @@
+<nz-modal
+  [(nzVisible)]="displayDialog"
+  nzTitle="Add New Ticket"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleAddTicket()"
+>
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="addTicketForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="16">Details</nz-form-label>
+        <nz-form-control>
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="details"
+              placeholder="Details"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="16">Customer name</nz-form-label>
+        <nz-form-control>
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="customerName"
+              placeholder="Customer Name"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="16">Date</nz-form-label>
+        <nz-form-control>
+          <nz-input-group>
+            <nz-date-picker formControlName="date"></nz-date-picker>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="16">Priority</nz-form-label>
+        <nz-form-control>
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="priority"
+              placeholder="Priority"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
+<ng-template #suffixIconSearch>
+  <span nz-icon nzType="search"></span>
+</ng-template>
+<nz-input-group [nzSuffix]="suffixIconSearch" class="w-80 mb-3">
+  <input nz-input placeholder="Search" nzSize="large" />
+</nz-input-group>
+<h2>Clients</h2>
+<button class="mb-2" nz-button nzType="primary" (click)="handleOpenDialog()">
+  Add
+</button>
+<nz-table #ticketsTable [nzData]="(tickets$ | async) || []">
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Customer name</th>
+      <th>Date</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of ticketsTable.data">
+      <td>{{ ticket.details }}</td>
+      <td>{{ ticket.customerName }}</td>
+      <td>{{ ticket.date }}</td>
+      <td>
+        {{ ticket.priority }}
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import {getGreeting} from '../support/app.po';
 
 describe('backoffice-material', () => {
   beforeEach(() => cy.visit('/'));

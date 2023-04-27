@@ -1,0 +1,23 @@
+<div class="flex flex-auto max-w-full w-full h-screen max-h-screen">
+  <div class="w-full max-w-16rem shadow-2 pt-4 z-3">
+    <div class="flex flex-row align-items-center mb-4 px-4">
+      <p-avatar label="J" size="large" shape="circle"></p-avatar>
+      <div class="ml-2">
+        <div class="text-xl font-medium">{{(user$ | async)?.displayName || 'Unknown user'}}</div>
+        <div class="font-light">Admin</div>
+      </div>
+    </div>
+    <p-menu [model]="menu" styleClass="border-none w-full"></p-menu>
+  </div>
+  <div class="surface-ground px-4 pt-4 pb-4 flex-auto overflow-y-auto">
+    <router-outlet></router-outlet>
+    <footer class="flex align-items-center gap-4 pt-4">
+      <img
+        src="../../assets/extrawest-logo-with-website.png"
+        alt="Extrawest Logo (extrawest.com)"
+        class="h-3rem"
+      >
+      <div>Made by Extrawest GmbH © 2023</div>
+    </footer>
+  </div>
+</div>

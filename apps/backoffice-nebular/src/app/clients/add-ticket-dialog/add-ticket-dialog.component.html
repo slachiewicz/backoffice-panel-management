@@ -1,0 +1,30 @@
+<form [formGroup]="addTicketForm" class="flex flex-column">
+  <label for="details">Details</label>
+  <input
+    id="details"
+    type="text"
+    nbInput
+    formControlName="details"
+    class="mb-3 mt-2"
+  />
+  <label for="customerName">Customer name</label>
+  <input
+    id="customerName"
+    type="text"
+    nbInput
+    formControlName="customerName"
+    class="mb-3 mt-2"
+  />
+  <label for="date">Date</label>
+  <input id="date" formControlName="date" [nbDatepicker]="datepicker" />
+  <nb-datepicker #datepicker></nb-datepicker>
+  <label for="priority">Priority</label>
+  <input
+    id="priority"
+    type="text"
+    nbInput
+    formControlName="priority"
+    class="mb-3 mt-2"
+  />
+  <button nbButton type="button" (click)="handleAddTicket()">Add</button>
+</form>

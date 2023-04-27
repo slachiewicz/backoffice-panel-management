@@ -1,0 +1,93 @@
+<h2 class="text-xl font-semibold mb-6">Dashboard</h2>
+<div class="max-w-full mb-3 bg-white rounded shadow p-4">
+  <div class="text-lg font-semibold mb-3">Today's trends</div>
+  <div class="flex gap-3">
+    <app-trend-graph></app-trend-graph>
+    <div class="flex-grow flex-shrink basis-0 text-center divide-y">
+      <div class="py-3">
+        <h4>Resolved</h4>
+        <h3 class="text-lg font-semibold">449</h3>
+      </div>
+      <div class="py-3">
+        <h4>Received</h4>
+        <h3 class="text-lg font-semibold">426</h3>
+      </div>
+      <div class="py-3">
+        <h4>Average first response time</h4>
+        <h3 class="text-lg font-semibold">33m</h3>
+      </div>
+      <div class="py-3">
+        <h4>Average response time</h4>
+        <h3 class="text-lg font-semibold">3h 8m</h3>
+      </div>
+      <div class="py-3">
+        <h4>Resolution within SLA</h4>
+        <h3 class="text-lg font-semibold">94%</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex gap-3">
+  <div class="mb-3 flex-grow flex-shrink basis-1/2 bg-white rounded shadow p-4">
+    <div class="text-lg font-semibold mb-3">Unresolved tickets</div>
+    <div class="divide-y">
+      <div class="flex flex-row justify-between py-3">
+        <div class="font-medium">Waiting on Feature Request</div>
+        <div>4238</div>
+      </div>
+      <div class="flex flex-row justify-between py-3">
+        <div class="font-medium">Awaiting Customer Response</div>
+        <div>1005</div>
+      </div>
+      <div class="flex flex-row justify-between py-3">
+        <div class="font-medium">Awaiting Developer Fix</div>
+        <div>914</div>
+      </div>
+      <div class="flex flex-row justify-between py-3">
+        <div class="font-medium">Pending</div>
+        <div>281</div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 flex-grow flex-shrink basis-1/2 bg-white rounded shadow p-4">
+    <div class="text-lg font-semibold mb-3">Tasks</div>
+    <div class="divide-y">
+      <div class="flex justify-between items-center py-3">
+        <div class="text-gray-400">Create new task</div>
+        <button class="m-0">
+          <ng-icon name="hero-plus-circle" size="16px"></ng-icon>
+        </button>
+      </div>
+      <div class="flex justify-between items-center py-3">
+        <div class="flex gap-2 items-center">
+          <input
+            type="checkbox"
+            class="h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400"
+          />
+          <label class="font-medium">Finish ticket update</label>
+        </div>
+        <div class="rounded-md shadow-sm bg-red-400 text-white p-2 text-xs">URGENT</div>
+      </div>
+      <div class="flex justify-between items-center py-3">
+        <div class="flex gap-2 items-center">
+          <input
+            type="checkbox"
+            class="h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400"
+          />
+          <label class="font-medium">Create new ticket example</label>
+        </div>
+        <div class="rounded-md shadow-sm bg-green-400 text-white p-2 text-xs">NEW</div>
+      </div>
+      <div class="flex justify-between items-center py-3">
+        <div class="flex gap-2 items-center">
+          <input
+            type="checkbox"
+            class="h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400"
+          />
+          <label class="font-medium">Update ticket report</label>
+        </div>
+        <div class="rounded-md shadow-sm bg-blue-400 text-white p-2 text-xs">DEFAULT</div>
+      </div>
+    </div>
+  </div>
+</div>

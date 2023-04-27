@@ -1,0 +1,105 @@
+<span class="p-input-icon-left">
+  <i class="pi pi-search"></i>
+  <input type="text" pInputText placeholder="Search" />
+</span>
+<h2>Dashboard</h2>
+<div class="grid">
+  <p-card class="col-12">
+    <ng-template pTemplate="header">
+      <h3 class="ml-3 pt-3 mt-0">Today's trends</h3>
+    </ng-template>
+    <div class="card flex flex-row align-items-stretch">
+      <p-chart
+        type="line"
+        [data]="basicData"
+        [options]="basicOptions"
+        width="850"
+        height="420"
+      ></p-chart>
+      <div class="w-full flex flex-column text-center">
+        <div>
+          <p class="mt-0">Resolved</p>
+          <h3 class="mb-0">449</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Received</p>
+          <h3 class="mb-0">426</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Average first response time</p>
+          <h3 class="mb-0">33m</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Average response time</p>
+          <h3 class="mb-0">3h 8m</h3>
+        </div>
+        <p-divider></p-divider>
+        <div>
+          <p class="mt-0">Resolution within SLA</p>
+          <h3 class="mb-0">94%</h3>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+<div class="grid">
+  <p-card class="col-6">
+    <ng-template pTemplate="header">
+      <h3 class="ml-3 pt-3 -mb-2">Unresolved tickets</h3>
+    </ng-template>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Waiting on feature request</div>
+      <div>4238</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Awaiting Customer Response</div>
+      <div>1005</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Awaiting Developer Fix</div>
+      <div>914</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="font-medium">Pending</div>
+      <div>281</div>
+    </div>
+  </p-card>
+  <p-card class="col-6">
+    <ng-template pTemplate="header">
+      <h3 class="ml-3 pt-3 -mb-2">Tasks</h3>
+    </ng-template>
+    <div class="flex justify-content-between">
+      <div class="text-400">Create new task</div>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket1" class="ml-2">Finish ticket update</label>
+      </div>
+      <p-tag severity="warning" value="Urgent"></p-tag>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket2" class="ml-2">Create new ticket example</label>
+      </div>
+      <p-tag severity="success" value="New"></p-tag>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex justify-content-between">
+      <div class="flex align-items-center">
+        <p-checkbox [binary]="true" inputId="ticket1"></p-checkbox>
+        <label for="ticket3" class="ml-2">Update ticket report</label>
+      </div>
+      <p-tag severity="info" value="Default"></p-tag>
+    </div>
+  </p-card>
+</div>
