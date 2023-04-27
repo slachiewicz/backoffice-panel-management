@@ -3,6 +3,7 @@
     {
       "site": "backoffice-antd",
       "public": "dist/apps/backoffice-antd",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -13,6 +14,7 @@
     {
       "site": "backoffice-primeng",
       "public": "dist/apps/backoffice-primeng",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -23,6 +25,7 @@
     {
       "site": "backoffice-tailwind",
       "public": "dist/apps/backoffice-tailwind",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -33,6 +36,7 @@
     {
       "site": "backoffice-material",
       "public": "dist/apps/backoffice-material",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -43,6 +47,7 @@
     {
       "site": "backoffice-nebular",
       "public": "dist/apps/backoffice-nebular",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",

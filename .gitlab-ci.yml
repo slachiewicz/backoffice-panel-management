@@ -4,13 +4,33 @@ cache:
   paths:
     - node_modules/
 
+stages:
+  - build
+  - deploy
+
+build:
+  only:
+    refs:
+      - main
+  stage: build
+  before_script:
+    - npm i --force
+  script:
+    - npm run build:all
+  artifacts:
+    expire_in: '300'
+    paths:
+      - dist
+
 deploy:
-  stage: deploy
-  environment: all
   only:
     - main
+  stage: deploy
+  before_script:
+    - npm i -g firebase-tools
   script:
-    - npm install -g firebase-tools
-    - npm install --force
-    - npm run build:all
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:backoffice-antd -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:backoffice-material -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:backoffice-nebular -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:backoffice-primeng -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:backoffice-tailwind -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
