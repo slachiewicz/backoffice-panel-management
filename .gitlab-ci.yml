@@ -3,7 +3,7 @@ image: node:18.16.0
 cache:
   paths:
     - node_modules/
-    - dist/
+    - dist/apps/
 
 deploy:
   stage: deploy
