@@ -1,0 +1,54 @@
+{
+  "hosting": [
+    {
+      "site": "backoffice-antd",
+      "public": "dist/backoffice-antd",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "backoffice-primeng",
+      "public": "dist/backoffice-primeng",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "backoffice-tailwind",
+      "public": "dist/backoffice-tailwind",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "backoffice-material",
+      "public": "dist/backoffice-material",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "backoffice-nebular",
+      "public": "dist/backoffice-nebular",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
