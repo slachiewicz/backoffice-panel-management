@@ -29,6 +29,7 @@ deploy:
   before_script:
     - npm i -g firebase-tools
   script:
+    - firebase use --add backoffice-40bfd
     - firebase deploy --only hosting:backoffice-antd -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:backoffice-material -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:backoffice-nebular -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
