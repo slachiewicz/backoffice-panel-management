@@ -3,26 +3,15 @@ image: node:18.16.0
 cache:
   paths:
     - node_modules/
-
-stages:
-  - build_all
-  - deploy_all
-
-build_all:
-  stage: build_all
-  only:
-    - main
-  script:
-    - npm install -g firebase-tools
-    - npm install --force
-    - npm run build:all
+    - dist/
 
 deploy_all:
   stage: deploy_all
   environment: all
   only:
     - main
-  dependencies:
-    - build_all
   script:
+    - npm install -g firebase-tools
+    - npm install --force
+    - npm run build:all
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
