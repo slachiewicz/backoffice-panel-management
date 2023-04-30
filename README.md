@@ -36,11 +36,11 @@
 
 ## Demo
 
-* [Ant Design (ng-zorro) demo](https://www.extrawest.com/)
-* [Material demo](https://www.extrawest.com/)
-* [Nebular demo](https://www.extrawest.com/)
-* [PrimeNG demo](https://www.extrawest.com/)
-* [Tailwind demo](https://www.extrawest.com/)
+* [Ant Design (ng-zorro) demo](https://backoffice-antd.web.app/)
+* [Material demo](https://backoffice-material.web.app/)
+* [Nebular demo](https://backoffice-nebular.web.app/)
+* [PrimeNG demo](https://backoffice-primeng.web.app/)
+* [Tailwind demo](https://backoffice-tailwind.web.app/)
 
 ### Installing:
 
@@ -73,7 +73,7 @@ pnpm install
 
 ```
 NX_FIREBASE_API_KEY=...
-NX_FIREBASE_AUTH_DOMAIN=...
+NX_FIREBASE_AUTH_DOMAIN_(INSERT_APP_NAME_HERE)=...
 NX_FIREBASE_PROJECT_ID=...
 NX_FIREBASE_STORAGE_BUCKET=...
 NX_FIREBASE_MESSAGING_SENDER_ID=...
